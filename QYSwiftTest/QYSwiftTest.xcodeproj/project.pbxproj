@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F88FB701F3D3D3000600C87 /* CALayerStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */; };
 		6FBF77191F39938800EF1EC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF77181F39938800EF1EC2 /* AppDelegate.swift */; };
 		6FBF771B1F39938800EF1EC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF771A1F39938800EF1EC2 /* ViewController.swift */; };
 		6FBF771E1F39938800EF1EC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBF771C1F39938800EF1EC2 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerStudy.swift; sourceTree = "<group>"; };
 		6FBF77151F39938800EF1EC2 /* QYSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QYSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FBF77181F39938800EF1EC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FBF771A1F39938800EF1EC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				6FBF77181F39938800EF1EC2 /* AppDelegate.swift */,
 				6FBF771A1F39938800EF1EC2 /* ViewController.swift */,
+				6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */,
 				6FBF771C1F39938800EF1EC2 /* Main.storyboard */,
 				6FBF771F1F39938800EF1EC2 /* Assets.xcassets */,
 				6FBF77211F39938800EF1EC2 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			files = (
 				6FBF771B1F39938800EF1EC2 /* ViewController.swift in Sources */,
 				6FBF77191F39938800EF1EC2 /* AppDelegate.swift in Sources */,
+				6F88FB701F3D3D3000600C87 /* CALayerStudy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +512,7 @@
 				6FBF773F1F39938800EF1EC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FBF77401F39938800EF1EC2 /* Build configuration list for PBXNativeTarget "QYSwiftTestTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +521,7 @@
 				6FBF77421F39938800EF1EC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FBF77431F39938800EF1EC2 /* Build configuration list for PBXNativeTarget "QYSwiftTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +530,7 @@
 				6FBF77451F39938800EF1EC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
