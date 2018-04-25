@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0B99F420907F9700EF8E53 /* HDAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B99F320907F9700EF8E53 /* HDAlgorithmViewController.swift */; };
 		6F88FB701F3D3D3000600C87 /* CALayerStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */; };
 		6FBF77191F39938800EF1EC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF77181F39938800EF1EC2 /* AppDelegate.swift */; };
 		6FBF771B1F39938800EF1EC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF771A1F39938800EF1EC2 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F0B99F320907F9700EF8E53 /* HDAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDAlgorithmViewController.swift; sourceTree = "<group>"; };
 		6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerStudy.swift; sourceTree = "<group>"; };
 		6FBF77151F39938800EF1EC2 /* QYSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QYSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FBF77181F39938800EF1EC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				6FBF77181F39938800EF1EC2 /* AppDelegate.swift */,
 				6FBF771A1F39938800EF1EC2 /* ViewController.swift */,
 				6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */,
+				6F0B99F320907F9700EF8E53 /* HDAlgorithmViewController.swift */,
 				6FBF771C1F39938800EF1EC2 /* Main.storyboard */,
 				6FBF771F1F39938800EF1EC2 /* Assets.xcassets */,
 				6FBF77211F39938800EF1EC2 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F0B99F420907F9700EF8E53 /* HDAlgorithmViewController.swift in Sources */,
 				6FBF771B1F39938800EF1EC2 /* ViewController.swift in Sources */,
 				6FBF77191F39938800EF1EC2 /* AppDelegate.swift in Sources */,
 				6F88FB701F3D3D3000600C87 /* CALayerStudy.swift in Sources */,
