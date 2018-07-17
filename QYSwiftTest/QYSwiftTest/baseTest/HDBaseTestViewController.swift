@@ -13,10 +13,15 @@ class HDBaseTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.white
+        
         // Do any additional setup after loading the view.
         
-      let resultOne = testOne(numArr: [1,2,3])
+       let resultOne = testOne(numArr: [1,2,3])
         print("数字顺序\(resultOne.one).....\(resultOne.two).....\(resultOne.three)")
+        
+       let resultTwo = testTwo(Nums: 2,3,5,6,8,7,10)
+        print("打印求和数字:\(resultTwo)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,4 +33,14 @@ class HDBaseTestViewController: UIViewController {
         return (numArr[0],numArr[1],numArr[2])
     }
 
+////函数可以带有可变个数的参数
+    func testTwo(Nums:Int...) -> Int {
+        var sumNum = 0
+        for num in Nums {
+            sumNum += num
+        }
+        return sumNum
+    }
+    
+    
 }
