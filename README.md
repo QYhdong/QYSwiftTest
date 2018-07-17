@@ -9,3 +9,13 @@ Some swift daily exercises
         let resultOne = testOne(numArr: [1,2,3])
         print("数字顺序\(resultOne.one).....\(resultOne.two).....\(resultOne.three)")
         
+        //2.函数可以带有可变个数的参数
+    func testTwo(Nums:Int...) -> Int {
+        var sumNum = 0
+        for num in Nums {
+            sumNum += num
+        }
+        return sumNum
+    }
+        let resultTwo = testTwo(Nums: 2,3,5,6,8,7,10)
+        print("打印求和数字:\(resultTwo)")
