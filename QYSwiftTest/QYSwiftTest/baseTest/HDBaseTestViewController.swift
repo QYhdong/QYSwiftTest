@@ -33,7 +33,7 @@ class HDBaseTestViewController: UIViewController {
         return (numArr[0],numArr[1],numArr[2])
     }
 
-////函数可以带有可变个数的参数
+//2.函数可以带有可变个数的参数
     func testTwo(Nums:Int...) -> Int {
         var sumNum = 0
         for num in Nums {
