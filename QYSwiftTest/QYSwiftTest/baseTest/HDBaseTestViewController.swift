@@ -47,5 +47,8 @@ class HDBaseTestViewController: UIViewController {
     }
     
 //3.
+    func testThree(){
+        
+    }
     
 }
