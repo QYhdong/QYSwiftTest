@@ -23,15 +23,10 @@ class HDBaseTestViewController: UIViewController {
        let resultTwo = testTwo(Nums: 2,3,5,6,8,7,10)
         print("打印求和数字:\(resultTwo)")
         
-
-        
-        
+        testThree()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
  //1.函数返回包含多个返回值
     func testOne(numArr:[Int]) -> (one:Int , two:Int , three:Int){
         return (numArr[0],numArr[1],numArr[2])
