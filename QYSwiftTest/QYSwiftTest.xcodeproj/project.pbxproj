@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F0B99F420907F9700EF8E53 /* HDAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B99F320907F9700EF8E53 /* HDAlgorithmViewController.swift */; };
 		6F32E1FB20FDC2B70028D21A /* HDBaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */; };
+		6F4AE2DD2111C19A000A537A /* HDRxTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */; };
 		6F88FB701F3D3D3000600C87 /* CALayerStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */; };
 		6FBF77191F39938800EF1EC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF77181F39938800EF1EC2 /* AppDelegate.swift */; };
 		6FBF771B1F39938800EF1EC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF771A1F39938800EF1EC2 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		023A54479794D12B40D142E3 /* Pods_QYSwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QYSwiftTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0B99F320907F9700EF8E53 /* HDAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDAlgorithmViewController.swift; sourceTree = "<group>"; };
 		6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDBaseTestViewController.swift; sourceTree = "<group>"; };
+		6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRxTestViewController.swift; sourceTree = "<group>"; };
 		6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerStudy.swift; sourceTree = "<group>"; };
 		6FBF77151F39938800EF1EC2 /* QYSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QYSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FBF77181F39938800EF1EC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */,
+				6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */,
 			);
 			path = baseTest;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				6FBF771B1F39938800EF1EC2 /* ViewController.swift in Sources */,
 				6FBF77191F39938800EF1EC2 /* AppDelegate.swift in Sources */,
 				6F88FB701F3D3D3000600C87 /* CALayerStudy.swift in Sources */,
+				6F4AE2DD2111C19A000A537A /* HDRxTestViewController.swift in Sources */,
 				6F32E1FB20FDC2B70028D21A /* HDBaseTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
