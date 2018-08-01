@@ -20,21 +20,30 @@ class HDRxTestViewController: UIViewController {
         view.backgroundColor = UIColor.white
         
         let observableO = Observable.of("不","能","说","的","秘","密")
-        observableO.subscribe { (event) in
-            print(event.element ?? "compeled")
+//        observableO.subscribe { (event) in
+//            print(event.element ?? "compeled")
+//        }
+//
+//        observableO.subscribe(onNext: { (element) in
+//            print(element)
+//        }, onError: { (error) in
+//            print(error)
+//        }, onCompleted: {
+//            print("completed")
+//        }) {
+//
+//        }
+        let observer:AnyObserver<String> = AnyObserver{ event in
+            switch event {
+            case .next(let data):
+                print(data)
+            case .error(let error):
+                print(error)
+            case .completed:
+                print("completed")
+            }
         }
-        
-        observableO.subscribe(onNext: { (element) in
-            print(element)
-        }, onError: { (error) in
-            print(error)
-        }, onCompleted: {
-            print("completed")
-        }) {
-            
-        }
-        
-        
+        observableO.subscribe(observer)
     }
 
     override func didReceiveMemoryWarning() {
