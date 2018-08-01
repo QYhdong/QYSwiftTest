@@ -44,6 +44,8 @@ class HDRxTestViewController: UIViewController {
             }
         }
         observableO.subscribe(observer)
+        
+        let textLabel = UILabel()
     }
 
     override func didReceiveMemoryWarning() {
