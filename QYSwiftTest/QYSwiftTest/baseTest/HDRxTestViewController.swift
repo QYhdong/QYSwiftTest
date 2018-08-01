@@ -8,6 +8,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HDRxTestViewController: UIViewController {
 
@@ -15,6 +17,24 @@ class HDRxTestViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.white
+        
+        let observableO = Observable.of("不","能","说","的","秘","密")
+        observableO.subscribe { (event) in
+            print(event.element ?? "compeled")
+        }
+        
+        observableO.subscribe(onNext: { (element) in
+            print(element)
+        }, onError: { (error) in
+            print(error)
+        }, onCompleted: {
+            print("completed")
+        }) {
+            
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
