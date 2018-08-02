@@ -23,7 +23,7 @@ class HDRxTestViewController: UIViewController {
         observableO.subscribe { (event) in
             print(event.element ?? "compeled")
         }
-        
+
         observableO.subscribe(onNext: { (element) in
             print(element)
         }, onError: { (error) in
@@ -31,7 +31,7 @@ class HDRxTestViewController: UIViewController {
         }, onCompleted: {
             print("completed")
         }) {
-            
+
         }
         
         
