@@ -15,8 +15,9 @@ import SnapKit
 class HDRxTestViewController: UIViewController {
 
     var label:UILabel!
+    var labelOther:UILabel!
     
-            let dispose = DisposeBag()
+    let dispose = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +25,21 @@ class HDRxTestViewController: UIViewController {
         view.backgroundColor = UIColor.white
         
         label = UILabel()
-        label.text = "哈哈哈"
+        label.text = "晴天"
         view.addSubview(label)
 
+        labelOther = UILabel()
+        labelOther.text = ""
+        view.addSubview(labelOther)
         
         label.snp.makeConstraints { (maker) in
             maker.top.equalTo(view).offset(30)
             maker.left.equalTo(view).offset(15)
+        }
+        
+        labelOther.snp.makeConstraints { (maker) in
+            maker.top.equalTo(label.snp.bottom).offset(20)
+            maker.left.equalTo(label)
         }
         
         let observableO = Observable.of("不","能","说","的","秘","密")
@@ -65,7 +74,7 @@ class HDRxTestViewController: UIViewController {
         
         let observable = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)
         observable.map {CGFloat($0)}.bind(to: label.rx.fontSize).disposed(by: dispose)
-        
+        observable.map {"当前索引数:\($0)"}.bind(to: labelOther.rx.text).disposed(by: dispose)
         
     }
 
