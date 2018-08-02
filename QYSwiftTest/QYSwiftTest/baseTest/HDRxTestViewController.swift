@@ -64,7 +64,7 @@ class HDRxTestViewController: UIViewController {
 //        observableT.disposed(by: dispose)
         
         let observable = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)
-        observable.map {CGFloat($0)}.bind(to: label.fontSize).disposed(by: dispose)
+        observable.map {CGFloat($0)}.bind(to: label.rx.fontSize).disposed(by: dispose)
         
         
     }
@@ -76,10 +76,18 @@ class HDRxTestViewController: UIViewController {
     
 }
 
-extension UILabel{
-    public var  fontSize:Binder<CGFloat>{
-        return Binder(self){ label,fontSize in
+extension Reactive where Base: UILabel{
+    public var fontSize: Binder<CGFloat> {
+        return Binder(self.base){label,fontSize in
             label.font = UIFont.systemFont(ofSize: fontSize)
         }
     }
 }
+
+//extension UILabel{
+//    public var  fontSize:Binder<CGFloat>{
+//        return Binder(self){ label,fontSize in
+//            label.font = UIFont.systemFont(ofSize: fontSize)
+//        }
+//    }
+//}
