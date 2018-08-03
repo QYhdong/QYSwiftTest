@@ -76,6 +76,7 @@ class HDRxTestViewController: UIViewController {
         observable.map {CGFloat($0)}.bind(to: label.rx.fontSize).disposed(by: dispose)
         observable.map {"当前索引数:\($0)"}.bind(to: labelOther.rx.text).disposed(by: dispose)
         
+        //
     }
 
     override func didReceiveMemoryWarning() {
