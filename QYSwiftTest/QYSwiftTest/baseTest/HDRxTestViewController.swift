@@ -61,7 +61,7 @@ class HDRxTestViewController: UIViewController {
 //        let observer:AnyObserver<String> = AnyObserver{ event in
 //            switch event {
 //            case .next(let data):
-//                print(data)
+//                print(data)3
 //            case .error(let error):
 //                print(error)
 //            case .completed:
@@ -75,6 +75,7 @@ class HDRxTestViewController: UIViewController {
         let observable = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)
         observable.map {CGFloat($0)}.bind(to: label.rx.fontSize).disposed(by: dispose)
         observable.map {"当前索引数:\($0)"}.bind(to: labelOther.rx.text).disposed(by: dispose)
+        
         
         //
     }
