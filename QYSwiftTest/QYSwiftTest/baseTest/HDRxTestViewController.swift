@@ -16,8 +16,10 @@ class HDRxTestViewController: UIViewController {
 
     var label:UILabel!
     var labelOther:UILabel!
+    var myTableView:UITableView!
+    var myViewModel:InfoViewModel!
     
-    let dispose = DisposeBag()
+    let dispose = DisposeBag()                      //回收
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,13 +78,42 @@ class HDRxTestViewController: UIViewController {
         observable.map {CGFloat($0)}.bind(to: label.rx.fontSize).disposed(by: dispose)
         observable.map {"当前索引数:\($0)"}.bind(to: labelOther.rx.text).disposed(by: dispose)
         
-        
+        setupUI()
+        bindViewModel()
         //
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupUI(){
+        //创建tableview
+        let tableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
+        tableView.backgroundColor = UIColor.white
+        tableView.register(MyCell.self, forCellReuseIdentifier: "MyCell")
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (maker) in
+            maker.edges.equalTo(view)
+        }
+        
+        myViewModel = InfoViewModel()
+        myTableView = tableView
+    }
+    
+    
+    //绑定ViewModel
+    func bindViewModel(){
+        
+//        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
+//               row, model, cell  in
+//
+//            cell.textLabel = "\(model.name)------\(model.age)"
+//
+//        }.disposed(by: dispose)
+        
+//        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
+//            row, model, cell in
+//            cell.textLabel = "\(model.name)------\(model.age)"
+//        }.disposed(by: dispose)
+        
     }
     
 }
@@ -95,6 +126,25 @@ extension Reactive where Base: UILabel{
     }
 }
 
+//cell
+class MyCell: UITableViewCell {
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super .init(style: style, reuseIdentifier: reuseIdentifier)
+        
+    }
+    
+    lazy var titleLabel:UILabel = {
+        let labell = UILabel()
+        return labell
+    }()
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
 //extension UILabel{
 //    public var  fontSize:Binder<CGFloat>{
 //        return Binder(self){ label,fontSize in
@@ -102,3 +152,31 @@ extension Reactive where Base: UILabel{
 //        }
 //    }
 //}
+
+//模型
+struct InfoModel {
+    
+    var name: String
+    var age: Int
+
+    //构造
+    init(name:String , age:Int) {
+        self.name = name
+        self.age = age
+    }
+    
+}
+
+struct InfoViewModel {
+    
+    let infoArr = Observable.just(
+        [
+            InfoModel(name: "张三", age: 10),
+            InfoModel(name: "李四", age: 12),
+            InfoModel(name: "王二麻子", age: 15),
+            InfoModel(name: "段誉", age: 25)
+            
+        ]
+    )
+    
+}
