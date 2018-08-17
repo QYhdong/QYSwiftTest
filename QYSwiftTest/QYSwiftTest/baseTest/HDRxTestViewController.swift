@@ -129,15 +129,17 @@ extension Reactive where Base: UILabel{
 //cell
 class MyCell: UITableViewCell {
     
+    lazy var titileLabel:UILabel = UILabel()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
         
     }
     
-    lazy var titleLabel:UILabel = {
-        let labell = UILabel()
-        return labell
-    }()
+//    lazy var titleLabel:UILabel = {
+//        let labell = UILabel()
+//        return labell
+//    }()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
