@@ -10,7 +10,7 @@ import UIKit
 
 class HDWYViewController: UIViewController {
 
-    public var dataArr:NSArray!
+    public var dataArr:NSMutableArray!
     
     public var viewControllerArray:NSMutableArray?                      //控制器类名
     public var viewControllerNameArray:NSMutableArray?            //名称
@@ -26,18 +26,27 @@ class HDWYViewController: UIViewController {
         
         lastSelectedIndex = 0
         selectedIndex = 0
-        dataArr = ["分类","推荐","VIP","直播","小说","广播"]
         
-        guard viewControllerArray == nil || viewControllerNameArray == nil else {
-            
-            for vc in viewControllerArray! {
-                
-            }
-            return
-        }
+        //设置控制器
+        vcConfig()
         
         setupUI()
         
+    }
+    
+    private func vcConfig(){
+        
+    dataArr = ["分类","推荐","VIP","直播","小说","广播"]
+        
+    guard let vcArr = viewControllerArray , let vcNameArr = viewControllerNameArray  else {return}
+    
+    for (index , vcName) in vcArr.enumerated() {
+    let model = HDVcModel()
+    model.vcTitleName = vcNameArr[index] as? String
+    model.vcClassName = vcName as? String
+    dataArr.add(model)
+    }
+    
     }
     
     private func setupUI(){
