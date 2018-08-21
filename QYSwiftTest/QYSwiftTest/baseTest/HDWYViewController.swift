@@ -10,13 +10,16 @@ import UIKit
 
 class HDWYViewController: UIViewController {
 
-    var dataArr:NSArray!
-    var lastSelectedIndex:Int!                   //上一次的标识
-    var selectedIndex:Int!                         //选中标识
+    public var dataArr:NSArray!
     
-    let cellWidth:CGFloat = 54        //cell宽高
+    public var viewControllerArray:NSMutableArray?                      //控制器类名
+    public var viewControllerNameArray:NSMutableArray?            //名称
     
-    lazy var bottoLine:UIView = UIView() //底部红线
+    fileprivate var lastSelectedIndex:Int!                   //上一次的标识
+    fileprivate var selectedIndex:Int!                         //选中标识
+    fileprivate let cellWidth:CGFloat = 54        //cell宽高
+    
+    fileprivate lazy var bottoLine:UIView = UIView() //底部红线
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,14 @@ class HDWYViewController: UIViewController {
         lastSelectedIndex = 0
         selectedIndex = 0
         dataArr = ["分类","推荐","VIP","直播","小说","广播"]
+        
+        guard viewControllerArray == nil || viewControllerNameArray == nil else {
+            
+            for vc in viewControllerArray! {
+                
+            }
+            return
+        }
         
         setupUI()
         
@@ -57,7 +68,7 @@ class HDWYViewController: UIViewController {
         
     }
 
-    lazy var myCollectionView:UICollectionView = {
+    private lazy var myCollectionView:UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -85,6 +96,7 @@ class HDWYViewController: UIViewController {
 
 }
 
+//MARK: -- 数据源&代理方法
 extension HDWYViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -118,6 +130,7 @@ extension HDWYViewController:UICollectionViewDelegate,UICollectionViewDataSource
         
         print("打印当前\(selectedIndex)-------上一个\(lastSelectedIndex)")
         
+        //动态更改布局
         UIView.animate(withDuration: 0.1, animations: {
             if self.selectedIndex > self.lastSelectedIndex{
 
@@ -171,10 +184,10 @@ extension HDWYViewController:UICollectionViewDelegate,UICollectionViewDataSource
     }
 }
 
+//MARK: -- 顶部标题collectionView的cell
 class HDWYCollectionViewCell: UICollectionViewCell {
-    
-    lazy var titleLabel:UILabel = UILabel()
-    lazy var bottomLineView:UIView = UIView()
+
+    private lazy var titleLabel:UILabel = UILabel()                             //标题
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -197,7 +210,7 @@ class HDWYCollectionViewCell: UICollectionViewCell {
         titleLabel.text = name
     }
     
-    
+    //动画改变字体状态
     fileprivate func changeFont(_ isSelected:Bool){
         
             if isSelected == true{
@@ -223,4 +236,10 @@ class HDWYCollectionViewCell: UICollectionViewCell {
     
 }
 
-
+//MARK: -- 子控制器模型类
+class HDVcModel: NSObject {
+    
+    var vcClassName:String?
+    var vcTitleName:String?
+    
+}
