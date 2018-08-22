@@ -24,30 +24,31 @@ class HDWYViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dataArr = ["分类","推荐","VIP","直播","小说","广播"]
         lastSelectedIndex = 0
         selectedIndex = 0
         
         //设置控制器
-        vcConfig()
+//        vcConfig()
         
         setupUI()
         
     }
     
-    private func vcConfig(){
-        
-    dataArr = ["分类","推荐","VIP","直播","小说","广播"]
-        
-    guard let vcArr = viewControllerArray , let vcNameArr = viewControllerNameArray  else {return}
-    
-    for (index , vcName) in vcArr.enumerated() {
-    let model = HDVcModel()
-    model.vcTitleName = vcNameArr[index] as? String
-    model.vcClassName = vcName as? String
-    dataArr.add(model)
-    }
-    
-    }
+//    private func vcConfig(){
+//
+
+//
+//    guard let vcArr = viewControllerArray , let vcNameArr = viewControllerNameArray  else {return}
+//
+//    for (index , vcName) in vcArr.enumerated() {
+//    let model = HDVcModel()
+//    model.vcTitleName = vcNameArr[index] as? String
+//    model.vcClassName = vcName as? String
+//    dataArr.add(model)
+//    }
+//
+//    }
     
     private func setupUI(){
         
