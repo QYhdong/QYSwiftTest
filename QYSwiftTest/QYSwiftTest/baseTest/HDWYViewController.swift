@@ -8,6 +8,8 @@
 
 import UIKit
 
+let SCREENWIDTH = UIScreen.main.bounds.size.width
+
 class HDWYViewController: UIViewController {
 
     public var dataArr:NSMutableArray!
@@ -31,9 +33,10 @@ class HDWYViewController: UIViewController {
         
         //设置控制器
 //        vcConfig()
-        
-        setupUI()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupUI()      
     }
     
 //    private func vcConfig(){
@@ -83,6 +86,16 @@ class HDWYViewController: UIViewController {
             maker.top.equalTo(titleCollectionView.snp.bottom)
             maker.left.right.equalTo(view)
             maker.bottom.equalTo(view)
+        }
+        
+        if self.childViewControllers.count != 0{
+            for (index,vc) in childViewControllers.enumerated(){
+                
+                vc.view.frame.origin.x = CGFloat(index) * SCREENWIDTH
+                
+                mainContentScrollView.addSubview(vc.view)
+            }
+            mainContentScrollView.contentSize = CGSize(width:  CGFloat(childViewControllers.count) * SCREENWIDTH, height: 0)
         }
         
     }
@@ -138,6 +151,7 @@ extension HDWYViewController:UICollectionViewDelegate,UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HDWYCollectionViewCell", for: indexPath) as! HDWYCollectionViewCell
         
         let name = dataArr[indexPath.row] as! String
@@ -155,67 +169,79 @@ extension HDWYViewController:UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         selectedIndex = indexPath.row
+        
+        //动画
+        redLineAnimation(indexPath)
 
-        let tempNum:CGFloat = CGFloat(abs(selectedIndex - lastSelectedIndex))
+        collectionView.reloadData()
+
+    }
+    
+    //title红色横条滑动动画
+    fileprivate func redLineAnimation(_ indexPath:IndexPath)  {
         
-        print("打印当前\(selectedIndex)-------上一个\(lastSelectedIndex)")
+    let tempNum:CGFloat = CGFloat(abs(selectedIndex - lastSelectedIndex))
         
-        //动态更改布局
+    print("打印当前\(selectedIndex)-------上一个\(lastSelectedIndex)")
+        
+    //动态更改布局
+    UIView.animate(withDuration: 0.1, animations: {
+        
+        
+        if self.selectedIndex > self.lastSelectedIndex{
+            
+            let x = self.bottoLine.frame.origin.x
+            
+            self.bottoLine.snp.updateConstraints({ (maker) in
+                maker.width.equalTo(self.bottoLine.bounds.size.width + self.cellWidth*tempNum-20)
+                maker.left.equalTo(self.view).offset(x)
+            })
+            self.view.layoutIfNeeded()
+        }else{
+            
+            self.bottoLine.snp.updateConstraints({ (maker) in
+                maker.width.equalTo(self.bottoLine.bounds.size.width + self.cellWidth*tempNum-20)
+                maker.left.equalTo(self.view).offset(self.cellWidth*CGFloat(indexPath.row)+10)
+            })
+            self.view.layoutIfNeeded()
+        }
+        
+    }) { (true) in
+        
         UIView.animate(withDuration: 0.1, animations: {
             if self.selectedIndex > self.lastSelectedIndex{
-
-                let x = self.bottoLine.frame.origin.x
                 
-                self.bottoLine.snp.updateConstraints({ (maker) in
-                    maker.width.equalTo(self.bottoLine.bounds.size.width + self.cellWidth*tempNum-20)
-                    maker.left.equalTo(self.view).offset(x)
-                })
-                self.view.layoutIfNeeded()
-            }else{
-
                 self.bottoLine.snp.updateConstraints({ (maker) in
                     maker.width.equalTo(self.bottoLine.bounds.size.width + self.cellWidth*tempNum-20)
                     maker.left.equalTo(self.view).offset(self.cellWidth*CGFloat(indexPath.row)+10)
                 })
+                
+                self.view.layoutIfNeeded()
+            }else{
+                self.bottoLine.snp.updateConstraints({ (maker) in
+                    maker.left.equalTo(self.view).offset(self.cellWidth*CGFloat(indexPath.row)+10)
+                })
                 self.view.layoutIfNeeded()
             }
-
-        }) { (true) in
-
-            UIView.animate(withDuration: 0.1, animations: {
-                if self.selectedIndex > self.lastSelectedIndex{
-       
-                    self.bottoLine.snp.updateConstraints({ (maker) in
-                        maker.width.equalTo(self.bottoLine.bounds.size.width + self.cellWidth*tempNum-20)
-                        maker.left.equalTo(self.view).offset(self.cellWidth*CGFloat(indexPath.row)+10)
-                    })
-                    
-                    self.view.layoutIfNeeded()
-                }else{
-                    self.bottoLine.snp.updateConstraints({ (maker) in
-                        maker.left.equalTo(self.view).offset(self.cellWidth*CGFloat(indexPath.row)+10)
-                    })
-                    self.view.layoutIfNeeded()
-                }
-                self.bottoLine.snp.updateConstraints({ (maker) in
-                    maker.width.equalTo(self.cellWidth-20)
-                })
-                    self.view.layoutIfNeeded()
+            self.bottoLine.snp.updateConstraints({ (maker) in
+                maker.width.equalTo(self.cellWidth-20)
             })
-
-            
-            self.lastSelectedIndex = self.selectedIndex
-            print("坐标\(self.bottoLine.frame)")
-        }
-
-        collectionView.reloadData()
+            self.view.layoutIfNeeded()
+        })
         
-        
+        self.lastSelectedIndex = self.selectedIndex
+        print("坐标\(self.bottoLine.frame)")
     }
+  }
+    
 }
+
 //MARK: --  scrollView代理
 extension HDWYViewController:UIScrollViewDelegate{
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = IndexPath(row: 3, section: 0)
+        redLineAnimation(index)
+    }
 }
 
 //MARK: -- HDWYCollectionViewCell类
