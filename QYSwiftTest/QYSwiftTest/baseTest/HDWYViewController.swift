@@ -20,6 +20,7 @@ class HDWYViewController: UIViewController {
     fileprivate let cellWidth:CGFloat = 54        //cell宽高
     
     fileprivate lazy var bottoLine:UIView = UIView() //底部红线
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +51,15 @@ class HDWYViewController: UIViewController {
 //
 //    }
     
+    //界面布局
     private func setupUI(){
         
         self.automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor.white
         
         
-        view.addSubview(myCollectionView)
-        myCollectionView.snp.makeConstraints { (maker) in
+        view.addSubview(titleCollectionView)
+        titleCollectionView.snp.makeConstraints { (maker) in
             maker.top.equalTo(view).offset(30)
             maker.left.equalTo(view).offset(0)
             maker.right.equalTo(view).offset(0)
@@ -70,15 +72,25 @@ class HDWYViewController: UIViewController {
         bottoLine.layer.cornerRadius = 2
         bottoLine.clipsToBounds = true
         bottoLine.snp.makeConstraints { (maker) in
-            maker.bottom.equalTo(myCollectionView.snp.bottom).offset(-5)
+            maker.bottom.equalTo(titleCollectionView.snp.bottom).offset(-5)
             maker.left.equalTo(view).offset(10)
             maker.height.equalTo(3)
             maker.width.equalTo(cellWidth-20)
         }
         
+        view.addSubview(mainContentScrollView)
+        mainContentScrollView.snp.makeConstraints { (maker) in
+            maker.top.equalTo(titleCollectionView.snp.bottom)
+            maker.left.right.equalTo(view)
+            maker.bottom.equalTo(view)
+        }
+        
     }
 
-    private lazy var myCollectionView:UICollectionView = {
+    //MARK:--懒加载控件
+    
+    //顶部标签collection
+    private lazy var titleCollectionView:UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -98,6 +110,14 @@ class HDWYViewController: UIViewController {
         return  collectionView
         
     }()
+    //管理所添加的控制器View
+    private lazy var mainContentScrollView:UIScrollView = {
+        let mainscrollView = UIScrollView()
+        mainscrollView.isPagingEnabled = true
+        mainscrollView.showsHorizontalScrollIndicator = false
+        mainscrollView.delegate = self
+        return mainscrollView
+    }()
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -106,7 +126,7 @@ class HDWYViewController: UIViewController {
 
 }
 
-//MARK: -- 数据源&代理方法
+//MARK: -- collectionView数据源&代理方法
 extension HDWYViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -193,8 +213,12 @@ extension HDWYViewController:UICollectionViewDelegate,UICollectionViewDataSource
         
     }
 }
+//MARK: --  scrollView代理
+extension HDWYViewController:UIScrollViewDelegate{
+    
+}
 
-//MARK: -- 顶部标题collectionView的cell
+//MARK: -- HDWYCollectionViewCell类
 class HDWYCollectionViewCell: UICollectionViewCell {
 
     private lazy var titleLabel:UILabel = UILabel()                             //标题
@@ -204,6 +228,7 @@ class HDWYCollectionViewCell: UICollectionViewCell {
         
         setupUI()
     }
+    
     
     private func setupUI(){
         
