@@ -173,10 +173,10 @@ struct InfoViewModel {
     
     let infoArr = Observable.just(
         [
-            InfoModel(name: "张三", age: 10),
-            InfoModel(name: "李四", age: 12),
-            InfoModel(name: "王二麻子", age: 15),
-            InfoModel(name: "段誉", age: 25)
+            InfoModel(name: "乔峰", age: 10),
+            InfoModel(name: "虚竹", age: 12),
+            InfoModel(name: "段誉", age: 15),
+            InfoModel(name: "扫地僧", age: 25)
             
         ]
     )
