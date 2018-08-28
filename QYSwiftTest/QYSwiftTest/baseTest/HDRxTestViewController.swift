@@ -119,7 +119,7 @@ class HDRxTestViewController: UIViewController {
 }
 
 extension Reactive where Base: UILabel{
-    public var fontSize: Binder<CGFloat> {
+    public var fontSize: Binder<CGFloat> { 
         return Binder(self.base){label,fontSize in
             label.font = UIFont.systemFont(ofSize: fontSize)
         }

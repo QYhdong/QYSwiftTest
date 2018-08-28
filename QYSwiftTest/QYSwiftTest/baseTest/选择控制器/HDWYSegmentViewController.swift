@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class HDWYSegmentViewController: HDWYViewController {
 
@@ -23,6 +24,11 @@ class HDWYSegmentViewController: HDWYViewController {
         
         addChildViewController(vcOne)
         addChildViewController(vcTwo)
+        
+        
+        let aaa = "aaa"
+        print(aaa)
+        
         
     }
 
