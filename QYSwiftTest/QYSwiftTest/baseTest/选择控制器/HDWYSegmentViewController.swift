@@ -28,7 +28,7 @@ class HDWYSegmentViewController: HDWYViewController {
         addChildViewController(vcTwo)
         
         
-        var aaa = Person()
+        var aaa = Person("aaa")
         print(aaa)
         
         weak var bbb = Person("bbb")
@@ -36,7 +36,7 @@ class HDWYSegmentViewController: HDWYViewController {
         
         weak var ccc = aaa
         print(ccc)
-        
+        UILabel()
 //        person = ccc
         print(CFGetRetainCount(aaa))
         print()
@@ -56,10 +56,13 @@ class HDWYSegmentViewController: HDWYViewController {
 
 class Person {
     var name:String
-    init() {
-        self.name = "123"
-    }
+    
     init(_ name:String) {
         self.name = name
+        print(CFGetRetainCount(name as CFTypeRef ))
+    }
+    
+    deinit {
+        print("deinit---\(CFGetRetainCount(name as CFTypeRef ))")
     }
 }
