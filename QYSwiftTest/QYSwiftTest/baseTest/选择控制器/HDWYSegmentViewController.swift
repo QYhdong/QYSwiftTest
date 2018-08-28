@@ -41,6 +41,13 @@ class HDWYSegmentViewController: HDWYViewController {
         print(CFGetRetainCount(aaa))
         print()
         withUnsafePointer(to: &aaa) { print("\($0)") }
+        
+        let arr = [1,2,3,4,5,6,7,8,9]
+        
+        let result = arr.reduce(0) { (runningNum, num) in
+            return runningNum + num
+        }
+        print(result)
     }
 
     deinit {
