@@ -11,6 +11,8 @@ import Foundation
 
 class HDWYSegmentViewController: HDWYViewController {
 
+    var person:Person!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +28,7 @@ class HDWYSegmentViewController: HDWYViewController {
         addChildViewController(vcTwo)
         
         
-        let aaa = Person("aaa")
+        var aaa = Person()
         print(aaa)
         
         weak var bbb = Person("bbb")
@@ -35,10 +37,16 @@ class HDWYSegmentViewController: HDWYViewController {
         weak var ccc = aaa
         print(ccc)
         
+//        person = ccc
         print(CFGetRetainCount(aaa))
-        
+        print()
+        withUnsafePointer(to: &aaa) { print("\($0)") }
     }
 
+    deinit {
+        print()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,6 +56,9 @@ class HDWYSegmentViewController: HDWYViewController {
 
 class Person {
     var name:String
+    init() {
+        self.name = "123"
+    }
     init(_ name:String) {
         self.name = name
     }
