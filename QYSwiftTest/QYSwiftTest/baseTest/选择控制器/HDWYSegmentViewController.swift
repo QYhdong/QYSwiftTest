@@ -26,9 +26,16 @@ class HDWYSegmentViewController: HDWYViewController {
         addChildViewController(vcTwo)
         
         
-        let aaa = "aaa"
+        let aaa = Person("aaa")
         print(aaa)
         
+        weak var bbb = Person("bbb")
+        print(bbb)
+        
+        weak var ccc = aaa
+        print(ccc)
+        
+        print(CFGetRetainCount(aaa))
         
     }
 
@@ -36,16 +43,12 @@ class HDWYSegmentViewController: HDWYViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+class Person {
+    var name:String
+    init(_ name:String) {
+        self.name = name
     }
-    */
-
 }
