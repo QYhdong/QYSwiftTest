@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F09B328213E730C00DABF82 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F09B327213E730C00DABF82 /* CoreSpotlight.framework */; };
 		6F0B99F420907F9700EF8E53 /* HDAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B99F320907F9700EF8E53 /* HDAlgorithmViewController.swift */; };
 		6F32E1FB20FDC2B70028D21A /* HDBaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */; };
 		6F4AE2DD2111C19A000A537A /* HDRxTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		023A54479794D12B40D142E3 /* Pods_QYSwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QYSwiftTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F09B327213E730C00DABF82 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		6F0B99F320907F9700EF8E53 /* HDAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDAlgorithmViewController.swift; sourceTree = "<group>"; };
 		6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDBaseTestViewController.swift; sourceTree = "<group>"; };
 		6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRxTestViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F09B328213E730C00DABF82 /* CoreSpotlight.framework in Frameworks */,
 				F4B4AB9452F941AE9FA082A6 /* Pods_QYSwiftTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +181,7 @@
 		E59EF2E3C8AC217D1BC2722A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F09B327213E730C00DABF82 /* CoreSpotlight.framework */,
 				023A54479794D12B40D142E3 /* Pods_QYSwiftTest.framework */,
 			);
 			name = Frameworks;
