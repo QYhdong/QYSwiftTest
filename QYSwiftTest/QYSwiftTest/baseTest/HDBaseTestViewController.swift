@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreSpotlight
 
 class HDBaseTestViewController: UIViewController {
 
@@ -24,6 +25,8 @@ class HDBaseTestViewController: UIViewController {
         print("打印求和数字:\(resultTwo)")
         
         testThree()
+        
+        insertSearchItem()
     }
 
 
@@ -44,6 +47,19 @@ class HDBaseTestViewController: UIViewController {
 //3.
     func testThree(){
         
+    }
+    
+//CSSearchableItem
+    func insertSearchItem(){
+        let attributeSet = CSSearchableItemAttributeSet(itemContentType: "com.dong.QYSwiftTest-")
+        attributeSet.title = "东dong东"
+        attributeSet.contentDescription = "哈哈哈 好好学习天天向上!~"
+        let searchableItem = CSSearchableItem(uniqueIdentifier: "0", domainIdentifier: "com.dong.QYSwiftTest-", attributeSet: attributeSet)
+        
+        
+        CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) in
+            
+        }
     }
     
 }
