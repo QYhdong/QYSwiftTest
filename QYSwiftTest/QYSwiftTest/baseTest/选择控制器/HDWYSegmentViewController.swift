@@ -28,6 +28,8 @@ class HDWYSegmentViewController: HDWYViewController {
         addChildViewController(vcTwo)
         
         
+        
+        //无关代码
         var aaa = Person("aaa")
         print(aaa)
         
@@ -36,10 +38,10 @@ class HDWYSegmentViewController: HDWYViewController {
         
         weak var ccc = aaa
         print(ccc)
-        UILabel()
+
 //        person = ccc
         print(CFGetRetainCount(aaa))
-        print()
+        
         withUnsafePointer(to: &aaa) { print("\($0)") }
         
         let arr = [1,2,3,4,5,6,7,8,9]
