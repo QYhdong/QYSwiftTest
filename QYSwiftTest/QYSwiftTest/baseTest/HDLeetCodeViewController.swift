@@ -16,7 +16,7 @@ class HDLeetCodeViewController: UIViewController {
         view.backgroundColor = UIColor.white
         
         let result = twoSum([2,6,11,15,7], 9)
-        print("两数之和---\(result)")
+        print("两数之和的下标---\(result)")
 
     }
 
@@ -35,19 +35,13 @@ class HDLeetCodeViewController: UIViewController {
   */
 
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        
-        var temp:Array<Int>?
-        for (i,num) in nums.enumerated(){
-            if i < nums.count-1 {
-//                print("第一个数---\(num)")
-//                print("第二个数---\(nums[i+1])")
-                if num + nums[i+1] == target {
-                    temp = [i,i+1];
+        //循环对比前后两数之和
+        for i in 0..<nums.count{
+            for j in (i+1)..<nums.count{
+                if nums[i] + nums[j] == target{
+                    return [i,j]
                 }
             }
-        }
-        guard  temp == nil  else {
-          return temp!
         }
 //        guard let tempArr = temp else{return}
         return []
