@@ -15,7 +15,7 @@ class HDLeetCodeViewController: UIViewController {
 
         view.backgroundColor = UIColor.white
         
-        let result = twoSum([2,6,11,15,7], 9)
+        let result = twoSumOther([2,6,11,15,7], 9)
         print("两数之和的下标---\(result)")
 
     }
@@ -47,6 +47,38 @@ class HDLeetCodeViewController: UIViewController {
         return []
     }
 
+    //哈希表
+    func twoSumOther(_ nums: [Int], _ target: Int) -> [Int] {
+
+//        var numDic:[Int:Int] = Dictionary()
+//        for(i,num) in nums.enumerated(){
+//            numDic[i] = num
+//        }
+//
+//        for j in 0..<nums.count{
+//            let otherNum = target - nums[j]
+//            for k in 0..<nums.count{
+//                if numDic[k] == otherNum{
+//                    return [j,k]
+//                }
+//            }
+//
+//        }
+        
+            var numDic:[Int:Int] = Dictionary()
+            for(i,num) in nums.enumerated(){
+                numDic[num] = i
+            }
+            for j in 0..<nums.count{
+              let otherNum = target - nums[j]
+                guard let index = numDic[otherNum] else{
+                    return []
+                }
+                return [j,index]
+            }
+        
+        return []
+    }
     
     
     func bubbleSort(nums:[Int]) -> [Int]{
