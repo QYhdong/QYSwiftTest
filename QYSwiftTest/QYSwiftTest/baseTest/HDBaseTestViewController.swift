@@ -24,7 +24,7 @@ class HDBaseTestViewController: UIViewController {
        let resultTwo = testTwo(Nums: 2,3,5,6,8,7,10)
         print("打印求和数字:\(resultTwo)")
         
-        testThree()
+//        testThree()
         
         insertSearchItem()
     }
@@ -42,11 +42,6 @@ class HDBaseTestViewController: UIViewController {
             sumNum += num
         }
         return sumNum
-    }
-    
-//3.
-    func testThree(){
-        
     }
     
 //CSSearchableItem
