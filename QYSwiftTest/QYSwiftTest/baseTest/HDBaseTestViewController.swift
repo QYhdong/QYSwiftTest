@@ -61,8 +61,9 @@ class HDBaseTestViewController: UIViewController {
     
     func gcdTest(){
         
-        let queue = DispatchQueue(label: "123", qos: .default)
+        let queueSerial = DispatchQueue(label: "123", qos: .default)
         
+        let queueGlobal = DispatchQueue.global( )
         //异步
 //        queue.async {
 //            for i in 0..<20{
@@ -78,7 +79,7 @@ class HDBaseTestViewController: UIViewController {
 //
         //延迟
         let delayTime = DispatchTimeInterval.seconds(5)
-        queue.asyncAfter(deadline: .now()+delayTime) {
+        queueSerial.asyncAfter(deadline: .now()+delayTime) {
             for i in 0..<20{
                                 print("打印数字\(i)")
                             }
@@ -88,6 +89,8 @@ class HDBaseTestViewController: UIViewController {
         for i in 0..<20{
             print("主队列打印数字\(i)")
         }
+        
+    
     }
     
     
