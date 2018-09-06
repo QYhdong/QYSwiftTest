@@ -26,7 +26,9 @@ class HDBaseTestViewController: UIViewController {
         
 //        testThree()
         
-        insertSearchItem()
+//        insertSearchItem()
+        
+        gcdTest()
     }
 
 
@@ -56,5 +58,24 @@ class HDBaseTestViewController: UIViewController {
             
         }
     }
+    
+    func gcdTest(){
+        
+        let queue = DispatchQueue(label: "123", qos: .default)
+        
+        
+        queue.async {
+            for i in 0..<20{
+                print("打印数字\(i)")
+            }
+        }
+//        queue.sync {
+//            for i in 0..<20{
+//                print("打印数字\(i)")
+//            }
+//        }
+    }
+    
+    
     
 }
