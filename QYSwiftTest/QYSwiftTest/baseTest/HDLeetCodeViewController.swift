@@ -18,6 +18,9 @@ class HDLeetCodeViewController: UIViewController {
         let result = twoSumOther([2,6,11,15,7], 9)
         print("两数之和的下标---\(result)")
 
+        let oneResult = plusOne([2,3,4,5,6,9,9,9,9,9])
+        
+        
     }
 
     // 1. 两数之和 ===============================================================================================================
@@ -101,6 +104,21 @@ class HDLeetCodeViewController: UIViewController {
 
     func plusOne(_ digits: [Int]) -> [Int] {
         
+        var stopNum:Int
+        
+        let lastIndex = digits.count-1
+        for i in 0..<digits.count{
+            if digits[lastIndex-i] == 9{
+                continue
+            }else{
+                stopNum = lastIndex-i
+                break
+            }
+        }
+        if digits[lastIndex] == 9{
+            
+        }
+        return digits
     }
     
     
