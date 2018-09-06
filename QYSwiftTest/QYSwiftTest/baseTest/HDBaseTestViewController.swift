@@ -63,17 +63,25 @@ class HDBaseTestViewController: UIViewController {
         
         let queue = DispatchQueue(label: "123", qos: .default)
         
-        
+        //异步
         queue.async {
             for i in 0..<20{
                 print("打印数字\(i)")
             }
         }
+//        //同步
 //        queue.sync {
 //            for i in 0..<20{
 //                print("打印数字\(i)")
 //            }
 //        }
+//
+        
+        
+        //主队列执行
+        for i in 0..<20{
+            print("主队列打印数字\(i)")
+        }
     }
     
     
