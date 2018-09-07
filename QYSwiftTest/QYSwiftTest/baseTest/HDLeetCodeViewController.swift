@@ -19,7 +19,7 @@ class HDLeetCodeViewController: UIViewController {
         print("两数之和的下标---\(result)")
 
         let oneResult = plusOne([2,3,4,5,6,2,9,5,9,9])
-        
+//        let oneResult = plusOne([9,9,9])
         print("加一后的数组\(oneResult)")
     }
 
@@ -110,19 +110,24 @@ class HDLeetCodeViewController: UIViewController {
         
         let lastIndex = digits.count-1
         for i in 0..<digits.count{
-            if digits[lastIndex-i] == 9{
+            
+            stopNum = lastIndex-i
+            
+            if digits[stopNum] == 9{
+                if stopNum == 0 && tempArr[0]==9{
+                    tempArr = tempArr.map { (num:Int) -> Int in
+                        return 0
+                    }
+                    tempArr.insert(1, at: 0)
+                }
                 continue
             }else{
-                stopNum = lastIndex-i
                 tempArr[stopNum] = tempArr[stopNum]+1
                 for num in stopNum+1 ..< digits.count{
                     tempArr[num] = 0
                 }
                 break
             }
-        }
-        if digits[lastIndex] == 9{
-            
         }
         return tempArr
     }
