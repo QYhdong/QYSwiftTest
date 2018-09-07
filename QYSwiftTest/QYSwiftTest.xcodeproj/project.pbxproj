@@ -102,8 +102,8 @@
 				6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */,
 				6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */,
 				6F79D9132126762800D5194C /* HDWYViewController.swift */,
-				6FB8CA39213011B200115933 /* 选择控制器 */,
 				6F19C1CC213FA92B002C8762 /* HDLeetCodeViewController.swift */,
+				6FB8CA39213011B200115933 /* 选择控制器 */,
 			);
 			path = baseTest;
 			sourceTree = "<group>";
