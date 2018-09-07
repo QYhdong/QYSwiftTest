@@ -27,6 +27,10 @@ class HDLeetCodeViewController: UIViewController {
         //移动零
         var zeroArr = [0,1,2,3,2,5,6,7,0,1,0,1]
         moveZeroes(&zeroArr)
+        
+        //翻转字符串
+        let twoResult = reverseString("abcdefg,abc")
+        print("翻转后的字符串\(twoResult)")
     }
     
 //数组 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -199,7 +203,12 @@ class HDLeetCodeViewController: UIViewController {
      输入: "A man, a plan, a canal: Panama"
      输出: "amanaP :lanac a ,nalp a ,nam A"
      */
-//    func reverseString(_ s: String) -> String {
-//        
-//    }
+    func reverseString(_ s: String) -> String {
+//        var tempStr:String = ""
+//        for i in 0..<s.count{
+//            tempStr.append(s.s)
+//        }
+        let result = String(s.reversed())
+        return result
+    }
 }
