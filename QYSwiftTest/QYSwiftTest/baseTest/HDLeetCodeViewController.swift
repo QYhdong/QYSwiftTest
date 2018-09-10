@@ -201,6 +201,14 @@ class HDLeetCodeViewController: UIViewController {
      */
     func removeDuplicates(_ nums: inout [Int]) -> Int {
         
+        for i in 0..<nums.count{
+            for j in 0..<nums.count-1-i{
+                if nums[j] == nums[j+1]{
+                    
+                }
+            }
+        }
+        
         return 0
     }
     
