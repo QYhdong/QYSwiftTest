@@ -204,7 +204,8 @@ class HDLeetCodeViewController: UIViewController {
         for i in 0..<nums.count{
             for j in 0..<nums.count-1-i{
                 if nums[j] == nums[j+1]{
-                    
+                    //////////2018Apple发布会明天就要开始喽...
+                    print(nums[i]);
                 }
             }
         }
