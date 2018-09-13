@@ -80,6 +80,8 @@ class HDRxTestViewController: UIViewController {
         
         setupUI()
         bindViewModel()
+        
+        subsTest()
         //
     }
 
@@ -98,21 +100,44 @@ class HDRxTestViewController: UIViewController {
         myTableView = tableView
     }
     
+    func subsTest(){
+        
+        let ob = Observable<Any>.create { (anyObjec) -> Disposable in
+            
+            anyObjec.onNext("an apple a day keeps doctor away")
+            
+            anyObjec.onCompleted()
+            
+            return Disposables.create()
+        }
+        
+        ob.subscribe(onNext: { (signal) in
+            print(signal)
+        }, onError: { (error) in
+            print(error)
+        }, onCompleted: {
+            print("完成")
+        }) {
+            print("销毁")
+        }.disposed(by: dispose)
+        
+        
+    }
     
     //绑定ViewModel
     func bindViewModel(){
         
-//        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
-//               row, model, cell  in
-//
-//            cell.textLabel = "\(model.name)------\(model.age)"
-//
-//        }.disposed(by: dispose)
+        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
+               row, model, cell  in
+
+            cell.textLabel = "\(model.name)------\(model.age)"
+
+        }.disposed(by: dispose)
         
-//        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
-//            row, model, cell in
-//            cell.textLabel = "\(model.name)------\(model.age)"
-//        }.disposed(by: dispose)
+        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
+            row, model, cell in
+            cell.textLabel = "\(model.name)------\(model.age)"
+        }.disposed(by: dispose)
         
     }
     
