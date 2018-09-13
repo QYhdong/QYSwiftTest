@@ -121,25 +121,40 @@ class HDRxTestViewController: UIViewController {
             print("销毁")
         }.disposed(by: dispose)
         
+        let btn = UIButton();
+        btn.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        btn.backgroundColor = UIColor.gray
+        view.addSubview(btn)
+        
+        btn.rx.controlEvent(.touchUpInside).subscribe(onNext: { (_) in
+            print("被点击......")
+            btn.tag += 1
+            print("打印tag值->  \(btn.tag )")
+        }, onError: { (error) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }.disposed(by: dispose)
         
     }
-    
+}
     //绑定ViewModel
     func bindViewModel(){
         
-        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
-               row, model, cell  in
-
-            cell.textLabel = "\(model.name)------\(model.age)"
-
-        }.disposed(by: dispose)
-        
-        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
-            row, model, cell in
-            cell.textLabel = "\(model.name)------\(model.age)"
-        }.disposed(by: dispose)
-        
-    }
+//        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
+//               row, model, cell  in
+//            cell.textLabel = "\(model.name)------\(model.age)"
+//
+//        }.disposed(by: dispose)
+//
+//        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
+//            row, model, cell in
+//            cell.textLabel = "\(model.name)------\(model.age)"
+//        }.disposed(by: dispose)
+//
+//    }
     
 }
 
@@ -195,6 +210,7 @@ struct InfoModel {
 }
 
 struct InfoViewModel {
+    
     
     let infoArr = Observable.just(
         [
