@@ -114,7 +114,7 @@ class HDRxTestViewController: UIViewController {
 }
 
 
-
+//错误枚举
 enum TestError:Error {
     case errorA
     case errorB
@@ -133,6 +133,7 @@ enum TestError:Error {
 }
 
 extension HDRxTestViewController{
+    //练习 Observable create
     func subsTest(){
         
         let ob = Observable<Any>.create { (anyObjec) -> Disposable in
