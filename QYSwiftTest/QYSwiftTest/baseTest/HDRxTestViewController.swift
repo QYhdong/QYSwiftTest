@@ -74,15 +74,15 @@ class HDRxTestViewController: UIViewController {
 //       let observableT = observableO.subscribe(observer)
 //        observableT.disposed(by: dispose)
         
-        let observable = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)
-        observable.map {CGFloat($0)}.bind(to: label.rx.fontSize).disposed(by: dispose)
-        observable.map {"当前索引数:\($0)"}.bind(to: labelOther.rx.text).disposed(by: dispose)
+//        let observable = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)
+//        observable.map {CGFloat($0)}.bind(to: label.rx.fontSize).disposed(by: dispose)
+//        observable.map {"当前索引数:\($0)"}.bind(to: labelOther.rx.text).disposed(by: dispose)
         
         setupUI()
         bindViewModel()
         
-        subsTest()
-        //
+//        subsTest()
+
     }
 
     func setupUI(){
@@ -100,11 +100,46 @@ class HDRxTestViewController: UIViewController {
         myTableView = tableView
     }
     
+    //绑定ViewModel
+    func bindViewModel(){
+        
+        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
+            row, model, cell in
+            
+            cell.textLabel?.text = model.name
+            
+        }.disposed(by: dispose)
+        
+    }
+}
+
+
+
+enum TestError:Error {
+    case errorA
+    case errorB
+    
+    var errorType:String{
+        switch self {
+        case .errorA:
+            return "A错误"
+        case .errorB:
+            return "B错误"
+        default: break
+            
+        }
+        
+    }
+}
+
+extension HDRxTestViewController{
     func subsTest(){
         
         let ob = Observable<Any>.create { (anyObjec) -> Disposable in
             
             anyObjec.onNext("an apple a day keeps doctor away")
+            
+            anyObjec.onError(TestError.errorA)
             
             anyObjec.onCompleted()
             
@@ -119,7 +154,7 @@ class HDRxTestViewController: UIViewController {
             print("完成")
         }) {
             print("销毁")
-        }.disposed(by: dispose)
+            }.disposed(by: dispose)
         
         let btn = UIButton();
         btn.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
@@ -131,30 +166,17 @@ class HDRxTestViewController: UIViewController {
             btn.tag += 1
             print("打印tag值->  \(btn.tag )")
         }, onError: { (error) in
-            
+            print(error)
         }, onCompleted: {
             
         }) {
             
-        }.disposed(by: dispose)
+            }.disposed(by: dispose)
         
     }
 }
-    //绑定ViewModel
-    func bindViewModel(){
-        
-//        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
-//               row, model, cell  in
-//            cell.textLabel = "\(model.name)------\(model.age)"
-//
-//        }.disposed(by: dispose)
-//
-//        self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
-//            row, model, cell in
-//            cell.textLabel = "\(model.name)------\(model.age)"
-//        }.disposed(by: dispose)
-//
-//    }
+
+extension HDRxTestViewController{
     
 }
 
@@ -217,7 +239,7 @@ struct InfoViewModel {
             InfoModel(name: "乔峰", age: 10),
             InfoModel(name: "虚竹", age: 12),
             InfoModel(name: "段誉", age: 15),
-            InfoModel(name: "扫地僧", age: 25)
+            InfoModel(name: "金庸", age: 25)
             
         ]
     )
