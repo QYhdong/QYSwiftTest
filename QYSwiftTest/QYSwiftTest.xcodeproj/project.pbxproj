@@ -100,9 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */,
-				6F79D9132126762800D5194C /* HDWYViewController.swift */,
 				6F19C1CC213FA92B002C8762 /* HDLeetCodeViewController.swift */,
-				6FB8CA39213011B200115933 /* 选择控制器 */,
 			);
 			path = baseTest;
 			sourceTree = "<group>";
@@ -118,6 +116,7 @@
 		6FB8CA39213011B200115933 /* 选择控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				6F79D9132126762800D5194C /* HDWYViewController.swift */,
 				6FB8CA3A213011E900115933 /* HDWYSegmentViewController.swift */,
 			);
 			path = "选择控制器";
@@ -148,6 +147,7 @@
 		6FBF77171F39938800EF1EC2 /* QYSwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				6FB8CA39213011B200115933 /* 选择控制器 */,
 				6F726A4C214B68740043166D /* RXSwift  */,
 				6F32E1F920FDC2980028D21A /* baseTest */,
 				6FBF77181F39938800EF1EC2 /* AppDelegate.swift */,
