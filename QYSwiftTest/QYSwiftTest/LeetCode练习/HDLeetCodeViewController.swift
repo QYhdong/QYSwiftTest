@@ -37,9 +37,13 @@ class HDLeetCodeViewController: UIViewController {
         let threeResult = removeDuplicates(&duplicates)
         print("打印个数\(threeResult)")
         
-        
+        //旋转数组
         var numArr = [1,2,3,4,5,6,7,8,9]
         rotate(&numArr, 1)
+        
+        //存在重复
+        let fourResult = containsDuplicate([3,1])
+        print("打印结果\(fourResult)")
     }
     
 //数组 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -260,14 +264,50 @@ class HDLeetCodeViewController: UIViewController {
         if nums.count == 0 || nums.count == 1{
             return
         }
-        var tempNum = 0
+//        var tempNum = 0
         for _ in 0..<k {
-            nums.insert(nums[nums.count-1], at: tempNum)
+            nums.insert(nums[nums.count-1], at: 0)
             nums.remove(at: nums.count-1)
-            tempNum += 1
+//            tempNum += 1
         }
         
         print("打印旋转数组\(nums)")
+    }
+    
+    //存在重复===============================================================================================================
+    /*
+     给定一个整数数组，判断是否存在重复元素。
+     
+     如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。
+     
+     示例 1:
+     
+     输入: [1,2,3,1]
+     输出: true
+     示例 2:
+     
+     输入: [1,2,3,4]
+     输出: false
+     示例 3:
+     
+     输入: [1,1,1,3,3,4,3,2,4,2]
+     输出: true
+     */
+    
+    func containsDuplicate(_ nums: [Int]) -> Bool {
+//
+//        if nums.count < 2{
+//            return false
+//        }
+//        for i in 0..<nums.count{
+//            for j in (i+1)..<nums.count{
+//                if nums[i] == nums[j]{
+//                    return true
+//                }
+//            }
+//        }
+//        return false
+
     }
     
    // ===============================================================================================================
