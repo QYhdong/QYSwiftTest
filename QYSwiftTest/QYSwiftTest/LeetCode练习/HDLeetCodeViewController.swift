@@ -296,17 +296,18 @@ class HDLeetCodeViewController: UIViewController {
     
     func containsDuplicate(_ nums: [Int]) -> Bool {
 //
-//        if nums.count < 2{
-//            return false
-//        }
-//        for i in 0..<nums.count{
-//            for j in (i+1)..<nums.count{
-//                if nums[i] == nums[j]{
-//                    return true
-//                }
-//            }
-//        }
-//        return false
+        if nums.count < 2{
+            return false
+        }
+        for i in 0..<nums.count{
+            for j in (i+1)..<nums.count{
+                if nums[i] == nums[j]{
+                    return true
+                }
+            }
+        }
+        return false
+
 
     }
     
