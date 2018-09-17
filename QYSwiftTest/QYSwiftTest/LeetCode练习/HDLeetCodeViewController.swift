@@ -204,20 +204,26 @@ class HDLeetCodeViewController: UIViewController {
      */
     func removeDuplicates(_ nums: inout [Int]) -> Int {
         
+        if nums.count == 0 || nums.count == 1{
+            return nums.count
+        }
+        
+        var tempNum = 0
+        //相同时不做操作
         for i in 0..<nums.count{
-            for j in i..<nums.count{
-                if nums[i] == nums[j]{
-                    //////////2018Apple发布会明天就要开始喽...
-//                    nums.replaceSubrange(Range(3), with: [1])
-                    nums[j] = Int(INT16_MIN)
-                    
-                    
-                }
+            if nums[i] != nums[tempNum]{
+                
+                tempNum += 1
+                nums[tempNum] = nums[i]
+                
             }
         }
+//        [0,0,1,1,1,2,2,3,3,4]
         print(nums)
         
-        return 0
+        let resultSize = tempNum+1
+        
+        return resultSize
     }
     
    // ===============================================================================================================
