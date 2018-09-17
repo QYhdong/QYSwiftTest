@@ -32,8 +32,14 @@ class HDLeetCodeViewController: UIViewController {
         let twoResult = reverseString("abcdefg,abc")
         print("翻转后的字符串\(twoResult)")
         
+        //从排序数组中删除重复项
         var duplicates = [0,0,1,1,1,2,2,3,3,4]
         let threeResult = removeDuplicates(&duplicates)
+        print("打印个数\(threeResult)")
+        
+        
+        var numArr = [1,2,3,4,5,6,7,8,9]
+        rotate(&numArr, 1)
     }
     
 //数组 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -251,6 +257,17 @@ class HDLeetCodeViewController: UIViewController {
      */
     func rotate(_ nums: inout [Int], _ k: Int) {
         
+        if nums.count == 0 || nums.count == 1{
+            return
+        }
+        var tempNum = 0
+        for _ in 0..<k {
+            nums.insert(nums[nums.count-1], at: tempNum)
+            nums.remove(at: nums.count-1)
+            tempNum += 1
+        }
+        
+        print("打印旋转数组\(nums)")
     }
     
    // ===============================================================================================================
