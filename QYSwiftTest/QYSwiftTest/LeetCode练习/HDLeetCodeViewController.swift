@@ -31,6 +31,9 @@ class HDLeetCodeViewController: UIViewController {
         //翻转字符串
         let twoResult = reverseString("abcdefg,abc")
         print("翻转后的字符串\(twoResult)")
+        
+        var duplicates = [0,0,1,1,1,2,2,3,3,4]
+        let threeResult = removeDuplicates(&duplicates)
     }
     
 //数组 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -202,13 +205,17 @@ class HDLeetCodeViewController: UIViewController {
     func removeDuplicates(_ nums: inout [Int]) -> Int {
         
         for i in 0..<nums.count{
-            for j in 0..<nums.count-1-i{
-                if nums[j] == nums[j+1]{
+            for j in i..<nums.count{
+                if nums[i] == nums[j]{
                     //////////2018Apple发布会明天就要开始喽...
-                    print(nums[i]);
+//                    nums.replaceSubrange(Range(3), with: [1])
+                    nums[j] = Int(INT16_MIN)
+                    
+                    
                 }
             }
         }
+        print(nums)
         
         return 0
     }
