@@ -103,6 +103,7 @@ class HDRxTestViewController: UIViewController {
     //绑定ViewModel
     func bindViewModel(){
         
+        //cell赋值
         self.myViewModel.infoArr.bind(to: myTableView.rx.items(cellIdentifier: "MyCell")){
             row, model, cell in
             
