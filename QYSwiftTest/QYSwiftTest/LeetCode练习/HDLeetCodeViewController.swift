@@ -296,20 +296,25 @@ class HDLeetCodeViewController: UIViewController {
     
     func containsDuplicate(_ nums: [Int]) -> Bool {
 //
-        if nums.count < 2{
-            return false
-        }
-        for i in 0..<nums.count{
-            for j in (i+1)..<nums.count{
-                if nums[i] == nums[j]{
-                    return true
-                }
-            }
-        }
-        return false
-
-
+//        if nums.count < 2{
+//            return false
+//        }
+//        let tempNums = nums.sorted()
+//        for i in 0..<tempNums.count-1 {
+//            if tempNums[i] == tempNums[i + 1]{
+//                return true
+//            }
+//
+//        }
+//
+//        return false
+        
+        let set = Set(nums)
+        return set.count != nums.count
     }
+    
+    //
+    
     
    // ===============================================================================================================
     func bubbleSort(nums:[Int]) -> [Int]{
