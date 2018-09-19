@@ -115,9 +115,17 @@
 		6F726A4D214B69310043166D /* LeetCode练习 */ = {
 			isa = PBXGroup;
 			children = (
-				6F19C1CC213FA92B002C8762 /* HDLeetCodeViewController.swift */,
+				6F79B8C62151DA5F00BC4F71 /* 初级算法篇 */,
 			);
 			path = "LeetCode练习";
+			sourceTree = "<group>";
+		};
+		6F79B8C62151DA5F00BC4F71 /* 初级算法篇 */ = {
+			isa = PBXGroup;
+			children = (
+				6F19C1CC213FA92B002C8762 /* HDLeetCodeViewController.swift */,
+			);
+			path = "初级算法篇";
 			sourceTree = "<group>";
 		};
 		6FB8CA39213011B200115933 /* 选择控制器 */ = {
