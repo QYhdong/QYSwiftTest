@@ -338,9 +338,19 @@ class HDLeetCodeViewController: UIViewController {
     
     func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         
+        var tempNumArr:[Int] = []
         var tempArr:[Int] = []
         
-        return tempArr
+        for i in 0..<nums1.count {
+            
+        }
+            
+            for num2 in nums2{
+          
+            }
+        
+    
+        return tempNumArr
     }
     
    // ========================================================================================================================================
