@@ -367,7 +367,10 @@ class HDLeetCodeViewController: UIViewController {
      输入: [4,1,2,1,2]
      输出: 4
      */
-    
+    func singleNumber(_ nums: [Int]) -> Int {
+        
+        return 0
+    }
     
    // =======================================================================================================================
     func bubbleSort(nums:[Int]) -> [Int]{
