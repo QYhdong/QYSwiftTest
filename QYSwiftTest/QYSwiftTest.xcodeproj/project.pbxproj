@@ -13,6 +13,7 @@
 		6F32E1FB20FDC2B70028D21A /* HDBaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */; };
 		6F4AE2DD2111C19A000A537A /* HDRxTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */; };
 		6F58E0EA215CB2AD00D13558 /* HDRXNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58E0E9215CB2AD00D13558 /* HDRXNumberViewController.swift */; };
+		6F58E0EC215CB34400D13558 /* RXStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F58E0EB215CB34400D13558 /* RXStoryboard.storyboard */; };
 		6F79D9142126762900D5194C /* HDWYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F79D9132126762800D5194C /* HDWYViewController.swift */; };
 		6F88FB701F3D3D3000600C87 /* CALayerStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */; };
 		6F9C7A58215B31F400A69DB1 /* HDRXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C7A57215B31F400A69DB1 /* HDRXLoginViewController.swift */; };
@@ -52,6 +53,7 @@
 		6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDBaseTestViewController.swift; sourceTree = "<group>"; };
 		6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRxTestViewController.swift; sourceTree = "<group>"; };
 		6F58E0E9215CB2AD00D13558 /* HDRXNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRXNumberViewController.swift; sourceTree = "<group>"; };
+		6F58E0EB215CB34400D13558 /* RXStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RXStoryboard.storyboard; sourceTree = "<group>"; };
 		6F79D9132126762800D5194C /* HDWYViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDWYViewController.swift; sourceTree = "<group>"; };
 		6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerStudy.swift; sourceTree = "<group>"; };
 		6F9C7A57215B31F400A69DB1 /* HDRXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRXLoginViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */,
 				6F9C7A57215B31F400A69DB1 /* HDRXLoginViewController.swift */,
 				6F58E0E9215CB2AD00D13558 /* HDRXNumberViewController.swift */,
+				6F58E0EB215CB34400D13558 /* RXStoryboard.storyboard */,
 			);
 			path = "RXSwift ";
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FBF77231F39938800EF1EC2 /* LaunchScreen.storyboard in Resources */,
+				6F58E0EC215CB34400D13558 /* RXStoryboard.storyboard in Resources */,
 				6FBF77201F39938800EF1EC2 /* Assets.xcassets in Resources */,
 				6FBF771E1F39938800EF1EC2 /* Main.storyboard in Resources */,
 			);
