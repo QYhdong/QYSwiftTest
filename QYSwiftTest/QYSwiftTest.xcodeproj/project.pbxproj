@@ -12,6 +12,7 @@
 		6F19C1CD213FA92B002C8762 /* HDLeetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19C1CC213FA92B002C8762 /* HDLeetCodeViewController.swift */; };
 		6F32E1FB20FDC2B70028D21A /* HDBaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */; };
 		6F4AE2DD2111C19A000A537A /* HDRxTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */; };
+		6F58E0EA215CB2AD00D13558 /* HDRXNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58E0E9215CB2AD00D13558 /* HDRXNumberViewController.swift */; };
 		6F79D9142126762900D5194C /* HDWYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F79D9132126762800D5194C /* HDWYViewController.swift */; };
 		6F88FB701F3D3D3000600C87 /* CALayerStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */; };
 		6F9C7A58215B31F400A69DB1 /* HDRXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C7A57215B31F400A69DB1 /* HDRXLoginViewController.swift */; };
@@ -50,6 +51,7 @@
 		6F19C1CC213FA92B002C8762 /* HDLeetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDLeetCodeViewController.swift; sourceTree = "<group>"; };
 		6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDBaseTestViewController.swift; sourceTree = "<group>"; };
 		6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRxTestViewController.swift; sourceTree = "<group>"; };
+		6F58E0E9215CB2AD00D13558 /* HDRXNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRXNumberViewController.swift; sourceTree = "<group>"; };
 		6F79D9132126762800D5194C /* HDWYViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDWYViewController.swift; sourceTree = "<group>"; };
 		6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerStudy.swift; sourceTree = "<group>"; };
 		6F9C7A57215B31F400A69DB1 /* HDRXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRXLoginViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */,
 				6F9C7A57215B31F400A69DB1 /* HDRXLoginViewController.swift */,
+				6F58E0E9215CB2AD00D13558 /* HDRXNumberViewController.swift */,
 			);
 			path = "RXSwift ";
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				6F0B99F420907F9700EF8E53 /* HDAlgorithmViewController.swift in Sources */,
 				6FBF771B1F39938800EF1EC2 /* ViewController.swift in Sources */,
 				6FBF77191F39938800EF1EC2 /* AppDelegate.swift in Sources */,
+				6F58E0EA215CB2AD00D13558 /* HDRXNumberViewController.swift in Sources */,
 				6F79D9142126762900D5194C /* HDWYViewController.swift in Sources */,
 				6F88FB701F3D3D3000600C87 /* CALayerStudy.swift in Sources */,
 				6F9C7A58215B31F400A69DB1 /* HDRXLoginViewController.swift in Sources */,

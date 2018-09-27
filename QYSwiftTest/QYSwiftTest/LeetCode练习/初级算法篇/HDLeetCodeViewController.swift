@@ -369,6 +369,18 @@ class HDLeetCodeViewController: UIViewController {
      */
     func singleNumber(_ nums: [Int]) -> Int {
         
+        var dic:[Int:Int] = Dictionary()
+        
+        
+        for i in 0..<nums.count{
+            dic[nums[i]] = i
+        }
+        
+        for i in 0..<nums.count{
+            
+        }
+        
+        
         return 0
     }
     
