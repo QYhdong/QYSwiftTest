@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let numberVc = UIStoryboard.init(name: "RXStoryboard", bundle: nil).instantiateViewController(withIdentifier: "HDRXNumberViewController")
-        self.window?.rootViewController = numberVc
+//        let numberVc = UIStoryboard.init(name: "RXStoryboard", bundle: nil).instantiateViewController(withIdentifier: "HDRXNumberViewController")
+//        self.window?.rootViewController = numberVc
+        
+        self.window?.rootViewController = HDRXGitHubSignupViewController()
         self.window?.makeKeyAndVisible()
         
         return true
