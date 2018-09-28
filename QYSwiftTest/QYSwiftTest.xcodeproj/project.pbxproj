@@ -27,6 +27,7 @@
 		6FBF77391F39938800EF1EC2 /* QYSwiftTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF77381F39938800EF1EC2 /* QYSwiftTestUITests.swift */; };
 		6FF55F18215DC03D0019E4C9 /* HDRXGitHubSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF55F17215DC03D0019E4C9 /* HDRXGitHubSignupViewController.swift */; };
 		6FF55F1B215DF9E60019E4C9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF55F1A215DF9E60019E4C9 /* Protocols.swift */; };
+		6FF55F1D215DFE820019E4C9 /* HDRXGitHubSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF55F1C215DFE820019E4C9 /* HDRXGitHubSignupViewModel.swift */; };
 		F4B4AB9452F941AE9FA082A6 /* Pods_QYSwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023A54479794D12B40D142E3 /* Pods_QYSwiftTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		6FBF773A1F39938800EF1EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FF55F17215DC03D0019E4C9 /* HDRXGitHubSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRXGitHubSignupViewController.swift; sourceTree = "<group>"; };
 		6FF55F1A215DF9E60019E4C9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		6FF55F1C215DFE820019E4C9 /* HDRXGitHubSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRXGitHubSignupViewModel.swift; sourceTree = "<group>"; };
 		98B1BDF714DDFAB1B3FF1BE8 /* Pods-QYSwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QYSwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-QYSwiftTest/Pods-QYSwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		FC403126C1C618E612D71064 /* Pods-QYSwiftTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QYSwiftTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QYSwiftTest/Pods-QYSwiftTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +217,7 @@
 			children = (
 				6FF55F17215DC03D0019E4C9 /* HDRXGitHubSignupViewController.swift */,
 				6FF55F1A215DF9E60019E4C9 /* Protocols.swift */,
+				6FF55F1C215DFE820019E4C9 /* HDRXGitHubSignupViewModel.swift */,
 			);
 			path = "RXGitHubSignup(注册界面)";
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				6F4AE2DD2111C19A000A537A /* HDRxTestViewController.swift in Sources */,
 				6FF55F1B215DF9E60019E4C9 /* Protocols.swift in Sources */,
 				6FF55F18215DC03D0019E4C9 /* HDRXGitHubSignupViewController.swift in Sources */,
+				6FF55F1D215DFE820019E4C9 /* HDRXGitHubSignupViewModel.swift in Sources */,
 				6F19C1CD213FA92B002C8762 /* HDLeetCodeViewController.swift in Sources */,
 				6F32E1FB20FDC2B70028D21A /* HDBaseTestViewController.swift in Sources */,
 			);
