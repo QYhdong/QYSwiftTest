@@ -376,15 +376,26 @@ class HDLeetCodeViewController: UIViewController {
             dic[nums[i]] = i
         }
         
+        var tempNum = 0
+        
         for i in 0..<nums.count{
+            
+            if tempNum == 2{
+                tempNum = 0
+            }
+            
+            let num = nums[i]
+            guard let _ = dic[num] else{return nums[i]}
+     
+            tempNum += 1
             
         }
         
-        
         return 0
     }
-    
+
    // =======================================================================================================================
+
     func bubbleSort(nums:[Int]) -> [Int]{
         var mutableArr = nums
         for i in 0..<mutableArr.count-1{
