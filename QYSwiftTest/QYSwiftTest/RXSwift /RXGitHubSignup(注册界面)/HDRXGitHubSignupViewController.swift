@@ -12,13 +12,13 @@ import SnapKit
 class HDRXGitHubSignupViewController: UIViewController {
 
     //MARK:控件
-    fileprivate lazy var usernameValidation = UILabel()                                                                                                                             //用户名验证
-    fileprivate lazy var passwordValidation = UILabel()                                                                                                                             //密码验证
-    fileprivate lazy var repeatedPasswordValidation = UILabel()                                                                                                              //确认密码验证
+    fileprivate lazy var usernameValidation = UILabel()                                                                                                                  //用户名验证
+    fileprivate lazy var passwordValidation = UILabel()                                                                                                                  //密码验证
+    fileprivate lazy var repeatedPasswordValidation = UILabel()                                                                                                    //确认密码验证
     
-    fileprivate lazy var userNameTextField:UITextField! = self.createTextField("Username(用户名)")                                              //用户名
-    fileprivate lazy var passwordTextField:UITextField! = self.createTextField("Password(密码)")                                                  //密码
-    fileprivate lazy var repeatedPasswordTextField:UITextField! = self.createTextField("Password Repeat(确认密码)")                //确认密码
+    fileprivate lazy var userNameTextField:UITextField! = self.createTextField("Username(用户名)")                                     //用户名
+    fileprivate lazy var passwordTextField:UITextField! = self.createTextField("Password(密码)")                                         //密码
+    fileprivate lazy var repeatedPasswordTextField:UITextField! = self.createTextField("Password Repeat(确认密码)")        //确认密码
     
     fileprivate lazy var signupBtn:UIButton = { [weak self] in                                                                               //登录按钮
         let btn = UIButton(type: UIButtonType.custom)
@@ -103,6 +103,7 @@ class HDRXGitHubSignupViewController: UIViewController {
 
 
 extension HDRXGitHubSignupViewController{
+    
     
    
 }
