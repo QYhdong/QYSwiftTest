@@ -12,6 +12,9 @@ import RxCocoa
 
 class HDRXGitHubSignupViewModel {
 
+    init() {
+        
+    }
     
     
 }
