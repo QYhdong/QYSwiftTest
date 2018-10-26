@@ -20,9 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let numberVc = UIStoryboard.init(name: "RXStoryboard", bundle: nil).instantiateViewController(withIdentifier: "HDRXNumberViewController")
 //        self.window?.rootViewController = numberVc
         
-        self.window?.rootViewController = HDRXGitHubSignupViewController()
-        self.window?.makeKeyAndVisible()
-        
+        self.window?.rootViewController = HDLeetCodeViewController()
+        self.window?.makeKeyAndVisible()        
         return true
     }
 

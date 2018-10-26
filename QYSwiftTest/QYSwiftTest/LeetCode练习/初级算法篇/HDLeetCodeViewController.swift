@@ -15,35 +15,39 @@ class HDLeetCodeViewController: UIViewController {
 
         view.backgroundColor = UIColor.white
         
-        //两数之和
-        let result = twoSumOther([2,6,11,15,7], 9)
-        print("两数之和的下标---\(result)")
-
-        //加一
-        let oneResult = plusOne([2,3,4,5,6,2,9,5,9,9])
-//        let oneResult = plusOne([9,9,9])
-        print("加一后的数组\(oneResult)")
+//        //两数之和
+//        let result = twoSumOther([2,6,11,15,7], 9)
+//        print("两数之和的下标---\(result)")
+//
+//        //加一
+//        let oneResult = plusOne([2,3,4,5,6,2,9,5,9,9])
+////        let oneResult = plusOne([9,9,9])
+//        print("加一后的数组\(oneResult)")
+//
+//        //移动零
+//        var zeroArr = [0,1,2,3,2,5,6,7,0,1,0,1]
+//        moveZeroes(&zeroArr)
+//
+//        //翻转字符串
+//        let twoResult = reverseString("abcdefg,abc")
+//        print("翻转后的字符串\(twoResult)")
+//
+//        //从排序数组中删除重复项
+//        var duplicates = [0,0,1,1,1,2,2,3,3,4]
+//        let threeResult = removeDuplicates(&duplicates)
+//        print("打印个数\(threeResult)")
+//
+//        //旋转数组
+//        var numArr = [1,2,3,4,5,6,7,8,9]
+//        rotate(&numArr, 1)
+//
+//        //存在重复
+//        let fourResult = containsDuplicate([3,1])
+//        print("打印结果\(fourResult)")
         
-        //移动零
-        var zeroArr = [0,1,2,3,2,5,6,7,0,1,0,1]
-        moveZeroes(&zeroArr)
-        
-        //翻转字符串
-        let twoResult = reverseString("abcdefg,abc")
-        print("翻转后的字符串\(twoResult)")
-        
-        //从排序数组中删除重复项
-        var duplicates = [0,0,1,1,1,2,2,3,3,4]
-        let threeResult = removeDuplicates(&duplicates)
-        print("打印个数\(threeResult)")
-        
-        //旋转数组
-        var numArr = [1,2,3,4,5,6,7,8,9]
-        rotate(&numArr, 1)
-        
-        //存在重复
-        let fourResult = containsDuplicate([3,1])
-        print("打印结果\(fourResult)")
+        //只出现一次
+        let fiveResult = singleNumber([2,2,1,3,3,5,7,6,5,7,6])
+        print("只出现一次打印结果\(fiveResult)")
     }
     
 //数组 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -369,29 +373,54 @@ class HDLeetCodeViewController: UIViewController {
      */
     func singleNumber(_ nums: [Int]) -> Int {
         
-        var dic:[Int:Int] = Dictionary()
+//        var dic:[Int:Int] = Dictionary()
+//
+//
+//        for i in 0..<nums.count{
+//            dic[nums[i]] = i
+//        }
+//
+//        var tempNum = 0
+//
+//        for i in 0..<nums.count{
+//
+//            if tempNum == 2{
+//                tempNum = 0
+//            }
+//
+//            let num = nums[i]
+//            guard let _ = dic[num] else{return nums[i]}
+//
+//            tempNum += 1
+//
+//        }
+//    var tempNumArr = nums
+//    let tempArr = NSMutableArray()
+//    for i in 0..<nums.count{
+//        let tempNum = tempNumArr[i]
+//        tempArr.add(tempNum)
+//        tempNumArr.remove(at: i)
+//        if tempNumArr.count == 2{
+//            if tempArr.contains(tempNumArr[0]){
+//                return tempNumArr[1]
+//            }else{
+//                return tempNumArr[0]
+//            }
+//        }
         
+//        if tempNumArr.contains(tempNum) == false{
+//            return tempNum
+//        }
         
-        for i in 0..<nums.count{
-            dic[nums[i]] = i
+//    }
+        var single = 0
+        nums.forEach { (num) in
+            
+            single = single ^ num
         }
         
-        var tempNum = 0
-        
-        for i in 0..<nums.count{
-            
-            if tempNum == 2{
-                tempNum = 0
-            }
-            
-            let num = nums[i]
-            guard let _ = dic[num] else{return nums[i]}
-     
-            tempNum += 1
-            
-        }
-        
-        return 0
+        return single
+
     }
 
    // =======================================================================================================================
