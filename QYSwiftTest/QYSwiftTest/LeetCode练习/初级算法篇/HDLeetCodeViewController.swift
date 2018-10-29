@@ -45,10 +45,22 @@ class HDLeetCodeViewController: UIViewController {
 //        let fourResult = containsDuplicate([3,1])
 //        print("打印结果\(fourResult)")
         
-        //只出现一次
-        let fiveResult = singleNumber([2,2,1,3,3,5,7,6,5,7,6])
-        print("只出现一次打印结果\(fiveResult)")
+//        //只出现一次
+//        let fiveResult = singleNumber([2,2,1,3,3,5,7,6,5,7,6])
+//        print("只出现一次打印结果\(fiveResult)")
+        
+        //旋转
+        var arr = [[1,2,3],[4,5,6],[7,8,9]]
+        rotate(&arr)
     }
+    
+    //点击屏幕打印数据
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //旋转
+        var arr = [[1,2,3],[4,5,6],[7,8,9]]
+        rotate(&arr)
+    }
+    
     
 //数组 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
@@ -373,27 +385,7 @@ class HDLeetCodeViewController: UIViewController {
      */
     func singleNumber(_ nums: [Int]) -> Int {
         
-//        var dic:[Int:Int] = Dictionary()
-//
-//
-//        for i in 0..<nums.count{
-//            dic[nums[i]] = i
-//        }
-//
-//        var tempNum = 0
-//
-//        for i in 0..<nums.count{
-//
-//            if tempNum == 2{
-//                tempNum = 0
-//            }
-//
-//            let num = nums[i]
-//            guard let _ = dic[num] else{return nums[i]}
-//
-//            tempNum += 1
-//
-//        }
+
 //    var tempNumArr = nums
 //    let tempArr = NSMutableArray()
 //    for i in 0..<nums.count{
@@ -423,6 +415,46 @@ class HDLeetCodeViewController: UIViewController {
 
     }
 
+    
+    //旋转图像
+    /*
+     给定一个 n × n 的二维矩阵表示一个图像。
+     将图像顺时针旋转 90 度。
+     
+     说明：
+     你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。
+     示例 1:
+     给定 matrix =
+     [
+     [1,2,3],
+     [4,5,6],
+     [7,8,9]
+     ],
+     原地旋转输入矩阵，使其变为:
+     [
+     [7,4,1],
+     [8,5,2],
+     [9,6,3]
+     ]
+  */
+    func rotate(_ matrix: inout [[Int]]) {
+        for i in 0..<matrix.count{
+            for j in 0..<matrix.count{
+                matrix[i].append(matrix[j][i])
+            }
+
+        }
+        
+        for i in 0..<matrix.count {
+            for _ in 0..<matrix.count{
+                matrix[i].remove(at: 0)
+            }
+            matrix[i].reverse()
+        }
+        
+        print("打印旋转数组\(matrix)")
+    }
+    
    // =======================================================================================================================
 
     func bubbleSort(nums:[Int]) -> [Int]{
