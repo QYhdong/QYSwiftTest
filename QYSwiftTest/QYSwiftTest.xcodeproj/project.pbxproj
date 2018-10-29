@@ -25,6 +25,7 @@
 		6FBF77231F39938800EF1EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBF77211F39938800EF1EC2 /* LaunchScreen.storyboard */; };
 		6FBF772E1F39938800EF1EC2 /* QYSwiftTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF772D1F39938800EF1EC2 /* QYSwiftTestTests.swift */; };
 		6FBF77391F39938800EF1EC2 /* QYSwiftTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF77381F39938800EF1EC2 /* QYSwiftTestUITests.swift */; };
+		6FF2E0902186F32400D12275 /* HDInterviewQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2E08F2186F32400D12275 /* HDInterviewQuestion.swift */; };
 		6FF55F18215DC03D0019E4C9 /* HDRXGitHubSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF55F17215DC03D0019E4C9 /* HDRXGitHubSignupViewController.swift */; };
 		6FF55F1B215DF9E60019E4C9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF55F1A215DF9E60019E4C9 /* Protocols.swift */; };
 		6FF55F1D215DFE820019E4C9 /* HDRXGitHubSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF55F1C215DFE820019E4C9 /* HDRXGitHubSignupViewModel.swift */; };
@@ -74,6 +75,7 @@
 		6FBF77341F39938800EF1EC2 /* QYSwiftTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QYSwiftTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FBF77381F39938800EF1EC2 /* QYSwiftTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYSwiftTestUITests.swift; sourceTree = "<group>"; };
 		6FBF773A1F39938800EF1EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FF2E08F2186F32400D12275 /* HDInterviewQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDInterviewQuestion.swift; sourceTree = "<group>"; };
 		6FF55F17215DC03D0019E4C9 /* HDRXGitHubSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRXGitHubSignupViewController.swift; sourceTree = "<group>"; };
 		6FF55F1A215DF9E60019E4C9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		6FF55F1C215DFE820019E4C9 /* HDRXGitHubSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRXGitHubSignupViewModel.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		6FBF77171F39938800EF1EC2 /* QYSwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				6FF2E08E2186F2CC00D12275 /* 记录 */,
 				6F726A4D214B69310043166D /* LeetCode练习 */,
 				6FB8CA39213011B200115933 /* 选择控制器 */,
 				6F726A4C214B68740043166D /* RXSwift  */,
@@ -210,6 +213,14 @@
 				6FBF773A1F39938800EF1EC2 /* Info.plist */,
 			);
 			path = QYSwiftTestUITests;
+			sourceTree = "<group>";
+		};
+		6FF2E08E2186F2CC00D12275 /* 记录 */ = {
+			isa = PBXGroup;
+			children = (
+				6FF2E08F2186F32400D12275 /* HDInterviewQuestion.swift */,
+			);
+			path = "记录";
 			sourceTree = "<group>";
 		};
 		6FF55F19215DF8B50019E4C9 /* RXGitHubSignup(注册界面) */ = {
@@ -438,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FB8CA3B213011E900115933 /* HDWYSegmentViewController.swift in Sources */,
+				6FF2E0902186F32400D12275 /* HDInterviewQuestion.swift in Sources */,
 				6F0B99F420907F9700EF8E53 /* HDAlgorithmViewController.swift in Sources */,
 				6FBF771B1F39938800EF1EC2 /* ViewController.swift in Sources */,
 				6FBF77191F39938800EF1EC2 /* AppDelegate.swift in Sources */,
