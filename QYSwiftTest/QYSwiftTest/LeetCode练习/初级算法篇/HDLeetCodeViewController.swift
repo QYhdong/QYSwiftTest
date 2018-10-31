@@ -49,16 +49,42 @@ class HDLeetCodeViewController: UIViewController {
 //        let fiveResult = singleNumber([2,2,1,3,3,5,7,6,5,7,6])
 //        print("只出现一次打印结果\(fiveResult)")
         
-        //旋转
-        var arr = [[1,2,3],[4,5,6],[7,8,9]]
-        rotate(&arr)
+//        //旋转
+//        var arr = [[1,2,3],[4,5,6],[7,8,9]]
+//        rotate(&arr)
+        //数独
+        var suduArr = [
+            ["5","3",".",".","7",".",".",".","."],
+            ["6",".",".","1","9","5",".",".","."],
+            [".","9","8",".",".",".",".","6","."],
+            ["8",".",".",".","6",".",".",".","3"],
+            ["4",".",".","8",".","3",".",".","1"],
+            ["7",".",".",".","2",".",".",".","6"],
+            [".","6",".",".",".",".","2","8","."],
+            [".",".",".","4","1","9",".",".","5"],
+            [".",".",".",".","8",".",".","7","9"]
+        ]
+        let suduResult = isValidSudoku(suduArr)
     }
     
     //点击屏幕打印数据
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //旋转
-        var arr = [[1,2,3],[4,5,6],[7,8,9]]
-        rotate(&arr)
+//        //旋转
+//        var arr = [[1,2,3],[4,5,6],[7,8,9]]
+//        rotate(&arr)
+        //数独
+        var suduArr = [
+            ["5","3",".",".","7",".",".",".","."],
+            ["6",".",".","1","9","5",".",".","."],
+            [".","9","8",".",".",".",".","6","."],
+            ["8",".",".",".","6",".",".",".","3"],
+            ["4",".",".","8",".","3",".",".","1"],
+            ["7",".",".",".","2",".",".",".","6"],
+            [".","6",".",".",".",".","2","8","."],
+            [".",".",".","4","1","9",".",".","5"],
+            [".",".",".",".","8",".",".","7","9"]
+        ]
+        let suduResult = isValidSudoku(suduArr)
     }
     
     
@@ -463,8 +489,29 @@ class HDLeetCodeViewController: UIViewController {
      数字 1-9 在每一列只能出现一次。
      数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
   */
-    func isValidSudoku(_ board: [[Character]]) -> Bool {
+    func isValidSudoku(_ board: [[String]]) -> Bool {
         
+        
+        for i in 0..<board.count{
+          
+            let set = Set(board[i])
+            if set.count != board[i].count{
+                return false
+            }
+            var tempArr = Array<String>()
+            for j in 0..<board.count{
+                tempArr.append(board[j][i])
+            }
+            let tempSet = Set(arrayLiteral: tempArr)
+            if tempSet.count != tempArr.count{
+                return false
+            }
+            tempArr.removeAll()
+            
+        }
+        
+        
+        return true
     }
    // =======================================================================================================================
 
