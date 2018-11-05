@@ -53,7 +53,7 @@ class HDLeetCodeViewController: UIViewController {
 //        var arr = [[1,2,3],[4,5,6],[7,8,9]]
 //        rotate(&arr)
         //数独
-        var suduArr = [
+        let suduArr = [
             ["5","3",".",".","7",".",".",".","."],
             ["6",".",".","1","9","5",".",".","."],
             [".","9","8",".",".",".",".","6","."],
@@ -65,6 +65,7 @@ class HDLeetCodeViewController: UIViewController {
             [".",".",".",".","8",".",".","7","9"]
         ]
         let suduResult = isValidSudoku(suduArr)
+        print("是否为有效的数独:\(suduResult)")
     }
     
     //点击屏幕打印数据
@@ -73,7 +74,7 @@ class HDLeetCodeViewController: UIViewController {
 //        var arr = [[1,2,3],[4,5,6],[7,8,9]]
 //        rotate(&arr)
         //数独
-        var suduArr = [
+        let suduArr = [
             ["5","3",".",".","7",".",".",".","."],
             ["6",".",".","1","9","5",".",".","."],
             [".","9","8",".",".",".",".","6","."],
@@ -84,7 +85,10 @@ class HDLeetCodeViewController: UIViewController {
             [".",".",".","4","1","9",".",".","5"],
             [".",".",".",".","8",".",".","7","9"]
         ]
-        let suduResult = isValidSudoku(suduArr)
+        
+        let aaa = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
+        let suduResult = isValidSudoku(aaa)
+        print("是否为有效的数独:\(suduResult)")
     }
     
     
@@ -493,23 +497,58 @@ class HDLeetCodeViewController: UIViewController {
         
         
         for i in 0..<board.count{
-          
-            let set = Set(board[i])
-            if set.count != board[i].count{
+            
+            var rowSet = Set<String>()
+            
+            let rowArr = NSMutableArray()
+            for num in board[i]{
+                if num != "."{
+                    rowArr.add(num)
+                    rowSet.insert(num)
+                }
+            }
+            
+            
+            
+            if rowSet.count != rowArr.count{
                 return false
             }
             var tempArr = Array<String>()
+            var tempSet = Set<String>()
             for j in 0..<board.count{
-                tempArr.append(board[j][i])
+                if board[j][i] != "."{
+                    tempArr.append(board[j][i])
+                    tempSet.insert(board[j][i])
+                }
             }
-            let tempSet = Set(arrayLiteral: tempArr)
+//            let tempSet = Set(arrayLiteral: tempArr)
             if tempSet.count != tempArr.count{
                 return false
             }
             tempArr.removeAll()
-            
         }
         
+        let arr = NSMutableArray()
+        //九宫格
+        for i in 0..<3{
+            for j in 0..<3{
+                arr.removeAllObjects()
+                let row = i*3
+                let col = j*3
+                for x in row..<(row+3){
+                    for y in col..<(col+3){
+                        let temp = board[x][y]
+                        if temp != "."{
+                            if arr.contains(temp){
+                                return false
+                            }else{
+                                arr.add(temp)
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
         return true
     }
