@@ -382,6 +382,7 @@ class HDLeetCodeViewController: UIViewController {
      如果 nums2 的元素存储在磁盘上，磁盘内存是有限的，并且你不能一次加载所有的元素到内存中，你该怎么办？
      */
     
+    
     func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         
         var tempNumArr:[Int] = []
@@ -389,6 +390,8 @@ class HDLeetCodeViewController: UIViewController {
         
         for i in 0..<nums1.count {
             for num2 in nums2{
+                
+                
                 
             }
         }
