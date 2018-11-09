@@ -388,6 +388,13 @@ class HDLeetCodeViewController: UIViewController {
         var tempNumArr:[Int] = []
         var tempArr:[Int] = []
         
+        var tempSureNum:Int?
+        if nums1.count>nums2.count{
+            tempNumArr = nums1
+            tempArr = nums2
+        }else{
+            
+        }
         for i in 0..<nums1.count {
             for num2 in nums2{
                 
