@@ -397,8 +397,7 @@ class HDLeetCodeViewController: UIViewController {
         }
         for i in 0..<nums1.count {
             for num2 in nums2{
-                
-                
+                //
                 
             }
         }
