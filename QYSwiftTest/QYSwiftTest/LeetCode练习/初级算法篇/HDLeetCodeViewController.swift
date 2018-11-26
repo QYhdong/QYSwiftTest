@@ -12,7 +12,7 @@ class HDLeetCodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(UIScreen.main.bounds.size)
         view.backgroundColor = UIColor.white
         
 //        //两数之和
@@ -73,6 +73,8 @@ class HDLeetCodeViewController: UIViewController {
 //        //旋转
 //        var arr = [[1,2,3],[4,5,6],[7,8,9]]
 //        rotate(&arr)
+//        print(UIScreen.main.bounds.size)
+        
         //数独
         let suduArr = [
             ["5","3",".",".","7",".",".",".","."],
@@ -481,7 +483,7 @@ class HDLeetCodeViewController: UIViewController {
             for j in 0..<matrix.count{
                 matrix[i].append(matrix[j][i])
             }
-
+ 
         }
         
         for i in 0..<matrix.count {
@@ -504,7 +506,6 @@ class HDLeetCodeViewController: UIViewController {
   */
     func isValidSudoku(_ board: [[String]]) -> Bool {
         
-        
         for i in 0..<board.count{
             
             var rowSet = Set<String>()
@@ -516,8 +517,6 @@ class HDLeetCodeViewController: UIViewController {
                     rowSet.insert(num)
                 }
             }
-            
-            
             
             if rowSet.count != rowArr.count{
                 return false
