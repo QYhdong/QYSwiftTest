@@ -73,8 +73,6 @@ class HDLeetCodeViewController: UIViewController {
 //        //旋转
 //        var arr = [[1,2,3],[4,5,6],[7,8,9]]
 //        rotate(&arr)
-//        print(UIScreen.main.bounds.size)
-        
         //数独
         let suduArr = [
             ["5","3",".",".","7",".",".",".","."],
