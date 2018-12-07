@@ -22,6 +22,5 @@ class HDCoreTextViewController: UIViewController {
         
     }
     
-    
 
 }
