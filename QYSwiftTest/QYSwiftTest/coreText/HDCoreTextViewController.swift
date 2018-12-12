@@ -14,7 +14,7 @@ class HDCoreTextViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        
+    
         // Do any additional setup after loading the view.
     }
     
