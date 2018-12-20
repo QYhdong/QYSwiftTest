@@ -9,5 +9,6 @@
 #ifndef Bridge_Header_h
 #define Bridge_Header_h
 
-
 #endif /* Bridge_Header_h */
+#import <FMDB/FMDatabase.h>
+

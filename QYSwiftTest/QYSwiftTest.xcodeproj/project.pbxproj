@@ -10,6 +10,8 @@
 		6F09B328213E730C00DABF82 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F09B327213E730C00DABF82 /* CoreSpotlight.framework */; };
 		6F0B99F420907F9700EF8E53 /* HDAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B99F320907F9700EF8E53 /* HDAlgorithmViewController.swift */; };
 		6F0C34C421C8C74B0034668C /* DataBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C34C321C8C74B0034668C /* DataBaseViewController.swift */; };
+		6F0C34C821C8DB910034668C /* HDFMDBManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C34C721C8DB910034668C /* HDFMDBManger.swift */; };
+		6F0C34CA21C8E29A0034668C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0C34C921C8E29A0034668C /* libsqlite3.0.tbd */; };
 		6F19C1CD213FA92B002C8762 /* HDLeetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19C1CC213FA92B002C8762 /* HDLeetCodeViewController.swift */; };
 		6F32E1FB20FDC2B70028D21A /* HDBaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */; };
 		6F4AE2DD2111C19A000A537A /* HDRxTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */; };
@@ -57,6 +59,8 @@
 		6F0B99F320907F9700EF8E53 /* HDAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDAlgorithmViewController.swift; sourceTree = "<group>"; };
 		6F0C34C321C8C74B0034668C /* DataBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseViewController.swift; sourceTree = "<group>"; };
 		6F0C34C621C8D4730034668C /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		6F0C34C721C8DB910034668C /* HDFMDBManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDFMDBManger.swift; sourceTree = "<group>"; };
+		6F0C34C921C8E29A0034668C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		6F19C1CC213FA92B002C8762 /* HDLeetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDLeetCodeViewController.swift; sourceTree = "<group>"; };
 		6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDBaseTestViewController.swift; sourceTree = "<group>"; };
 		6F4AE2DC2111C19A000A537A /* HDRxTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRxTestViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F0C34CA21C8E29A0034668C /* libsqlite3.0.tbd in Frameworks */,
 				6F09B328213E730C00DABF82 /* CoreSpotlight.framework in Frameworks */,
 				F4B4AB9452F941AE9FA082A6 /* Pods_QYSwiftTest.framework in Frameworks */,
 			);
@@ -115,19 +120,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F0C34C521C8C7700034668C /* lib */ = {
+		6F0C34C521C8C7700034668C /* dataBase */ = {
 			isa = PBXGroup;
 			children = (
+				6F0C34C321C8C74B0034668C /* DataBaseViewController.swift */,
+				6F0C34C721C8DB910034668C /* HDFMDBManger.swift */,
 			);
-			path = lib;
+			path = dataBase;
 			sourceTree = "<group>";
 		};
 		6F32E1F920FDC2980028D21A /* baseTest(日常练习) */ = {
 			isa = PBXGroup;
 			children = (
-				6F0C34C521C8C7700034668C /* lib */,
+				6F0C34C521C8C7700034668C /* dataBase */,
 				6F32E1FA20FDC2B70028D21A /* HDBaseTestViewController.swift */,
-				6F0C34C321C8C74B0034668C /* DataBaseViewController.swift */,
 			);
 			path = "baseTest(日常练习)";
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 		E59EF2E3C8AC217D1BC2722A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F0C34C921C8E29A0034668C /* libsqlite3.0.tbd */,
 				6F09B327213E730C00DABF82 /* CoreSpotlight.framework */,
 				023A54479794D12B40D142E3 /* Pods_QYSwiftTest.framework */,
 			);
@@ -476,6 +483,7 @@
 			files = (
 				6FB8CA3B213011E900115933 /* HDWYSegmentViewController.swift in Sources */,
 				6FF2E0902186F32400D12275 /* HDInterviewQuestion.swift in Sources */,
+				6F0C34C821C8DB910034668C /* HDFMDBManger.swift in Sources */,
 				6FA323ED21BA0DDA00B3F49D /* HDCoreTextViewController.swift in Sources */,
 				6F0B99F420907F9700EF8E53 /* HDAlgorithmViewController.swift in Sources */,
 				6FBF771B1F39938800EF1EC2 /* ViewController.swift in Sources */,
