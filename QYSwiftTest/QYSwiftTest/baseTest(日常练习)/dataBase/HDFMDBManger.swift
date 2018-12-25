@@ -17,7 +17,8 @@ class HDFMDBManger: NSObject {
     private lazy var resultArray = NSMutableArray()
     
     override init() {
-        
+        super.init()
+        self.config()
     }
     //建表
     func config()  {
@@ -34,9 +35,11 @@ class HDFMDBManger: NSObject {
     
     //增
     func insertInfoTable(table:String, text:String) {
-        let insertSql = "insert into \(table) (text) values (?)"
+        let insertSql = "insert into \(table) (bookName) values (?)"
         if db.executeUpdate(insertSql, withArgumentsIn: [text]) == true{
             print("增加数据成功!")
+        }else{
+            
         }
     }
     //查
@@ -46,7 +49,7 @@ class HDFMDBManger: NSObject {
         let selectQql = "select * from \(table)"
         let set:FMResultSet = db.executeQuery(selectQql, withArgumentsIn: [])!
         while set.next() == true {
-            resultArray.add(set.string(forColumn: "text")!)
+            resultArray.add(set.string(forColumn: "bookName")!)
         }
         return resultArray
     }
