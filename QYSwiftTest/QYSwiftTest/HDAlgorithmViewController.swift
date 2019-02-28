@@ -34,7 +34,6 @@ class HDAlgorithmViewController: UIViewController {
     func bubblingCalculate() {
         
         var aaa = [2,7,20,12,8,3,66,32,16,18,33]
-
         for i in 0..<aaa.count {
             for j in 0..<aaa.count - (i+1) {
                 if aaa[j] > aaa[j+1]{
