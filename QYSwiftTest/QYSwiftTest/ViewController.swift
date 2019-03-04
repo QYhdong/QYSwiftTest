@@ -27,6 +27,32 @@ class ViewController: UIViewController {
         var num1 = 10
         var num2 = 20
         changeNum(num1: &num1, num2: &num2)
+        
+        self.hd()
+        self.aaa(0,100)
+        
+        var studentArr = [Student]()
+        for num in 0...10{
+            let model = Student()
+            model.name = "学员\(num)"
+            model.age = num
+            studentArr.append(model)
+        }
+        
+        let afterArr = studentArr.map { (student) -> Student in
+            student.age = student.age! + 1
+            return student
+        }
+        
+        
+        for model in afterArr {
+            print(model.age!)
+        }
+        
+        
+        
+        let arr = (0...10).map{$0*$0}
+        print(arr)
     }
 
     override func didReceiveMemoryWarning() {
@@ -128,5 +154,46 @@ class ViewController: UIViewController {
     
 //------------------------
 //------------------------
+//0~100以内的偶数 并且是其他数字的平方...
+    func aaa(_ from:Int,_ to:Int) -> [Int]{
+        var res = [Int]()
+        for num in (from...to) where num%2 == 0{
+            if (from...to).contains(num*num){
+                res.append(num*num)
+            }
+        }
+        print(res)
+        return res
+    }
+    
+    
+    
+    
+    
+    
+    func hd(){
+        
+        let btn = UIButton(type: .custom)
+        var aaa:[Any] = []
+        
+        let aaaaa = [1,2,3,4,5,6,7]
+        
+        print(aaa)
+        
+        for (i,a) in aaa.enumerated().reversed() {
+   
+            
+        }
+        
+        aaa.forEach { (a) in
+            
+        }
+    }
 }
 
+class Student:NSObject{
+    
+   var name:String?
+   var age:Int?
+    
+}

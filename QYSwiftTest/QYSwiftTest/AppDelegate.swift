@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let numberVc = UIStoryboard.init(name: "RXStoryboard", bundle: nil).instantiateViewController(withIdentifier: "HDRXNumberViewController")
 //        self.window?.rootViewController = numberVc
         
-        self.window?.rootViewController = HDAlgorithmViewController()
+        self.window?.rootViewController = ViewController()
         self.window?.makeKeyAndVisible()        
         return true
     }
