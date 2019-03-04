@@ -44,12 +44,9 @@ class ViewController: UIViewController {
             return student
         }
         
-        
         for model in afterArr {
             print(model.age!)
         }
-        
-        
         
         let arr = (0...10).map{$0*$0}
         print(arr)
