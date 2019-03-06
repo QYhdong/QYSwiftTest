@@ -132,7 +132,7 @@
 			path = dataBase;
 			sourceTree = "<group>";
 		};
-		6F32E1F920FDC2980028D21A /* baseTest(日常练习) */ = {
+		6F32E1F920FDC2980028D21A /* baseTest */ = {
 			isa = PBXGroup;
 			children = (
 				6F0C34C521C8C7700034668C /* dataBase */,
@@ -140,7 +140,7 @@
 				6FC02FB6222D24F400AA2D52 /* HDRuntimeTextViewController.h */,
 				6FC02FB7222D24F400AA2D52 /* HDRuntimeTextViewController.m */,
 			);
-			path = "baseTest(日常练习)";
+			path = baseTest;
 			sourceTree = "<group>";
 		};
 		6F726A4C214B68740043166D /* RXSwift  */ = {
@@ -219,7 +219,7 @@
 				6F726A4D214B69310043166D /* LeetCode练习 */,
 				6FB8CA39213011B200115933 /* 选择控制器 */,
 				6F726A4C214B68740043166D /* RXSwift  */,
-				6F32E1F920FDC2980028D21A /* baseTest(日常练习) */,
+				6F32E1F920FDC2980028D21A /* baseTest */,
 				6FBF77181F39938800EF1EC2 /* AppDelegate.swift */,
 				6FBF771A1F39938800EF1EC2 /* ViewController.swift */,
 				6F88FB6F1F3D3D3000600C87 /* CALayerStudy.swift */,

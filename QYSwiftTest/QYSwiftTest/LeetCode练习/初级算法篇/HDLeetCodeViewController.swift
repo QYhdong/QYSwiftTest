@@ -390,102 +390,47 @@ class HDLeetCodeViewController: UIViewController {
     
     func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         
-        var tempNumArr = [Int]()
-        var indexArr = [Int]()
-        var indexArrTwo = [Int]()
+//方法一
+//        var tempNumArr = [Int]()
+//        var indexArr = [Int]()
+//        var indexArrTwo = [Int]()
+//
+//        var nums11 = nums1
+//        var nums22 = nums2
+//
+//        if nums1.count>nums2.count{
+//            (nums11,nums22) = (nums22,nums11)
+//        }
+//
+//        for (i,num11) in nums11.enumerated(){
+//            for (j,num22) in nums22.enumerated(){
+//                if num11 == num22 && !indexArr.contains(i) && !indexArrTwo.contains(j){
+//                    tempNumArr.append(num11)
+//                    indexArr.append(i)
+//                    indexArrTwo.append(j)
+//                }
+//            }
+//        }
         
-        var nums11 = nums1
-        var nums22 = nums2
+//方法二:
         
-        if nums1.count>nums2.count{
-            (nums11,nums22) = (nums22,nums11)
-        }
-        
-        for (i,num11) in nums11.enumerated(){
-            for (j,num22) in nums22.enumerated(){
-                if num11 == num22 && !indexArr.contains(i) && !indexArrTwo.contains(j){
-                    tempNumArr.append(num11)
-                    indexArr.append(i)
-                    indexArrTwo.append(j)
-                }
+        var map:[Int:Int] = [Int:Int]()
+        for num1 in nums1{
+            if let num = map[num1]{
+                map[num1] = num + 1
+            }else{
+                map[num1] = 1
             }
         }
         
-//        if nums1.count<nums2.count{
-//            for (i,num1) in nums1.enumerated(){
-//                for (j,num2) in nums2.enumerated(){
-//                    if num1 == num2 && !indexArr.contains(i) && !indexArrTwo.contains(j){
-//                        tempNumArr.append(num1)
-//                        indexArr.append(i)
-//                        indexArrTwo.append(j)
-//                    }
-//                }
-//            }
-//        }else{
-//            for (i,num2) in nums2.enumerated(){
-//                for (j,num1) in nums1.enumerated(){
-//                    if num2 == num1 && !indexArr.contains(i) && !indexArrTwo.contains(j){
-//                        tempNumArr.append(num2)
-//                        indexArr.append(i)
-//                        indexArrTwo.append(j)
-//                    }
-//                }
-//            }
-//        }
+        var tempNumArr = [Int]()
+        for num2 in nums2{
+            if let num = map[num2] , num>=1{
+                tempNumArr.append(num2)
+                map[num2] = num-1
+            }
+        }
         
-            
-//            if nums1.count==nums2.count{
-//
-//            let set1 = Set(nums1)
-//            let set2 = Set(nums2)
-//
-//            if set1.count<set2.count{
-//                for (i,num2) in nums2.enumerated(){
-//                    for num1 in nums1{
-//                        if num2 == num1 && !indexArr.contains(i){
-//                            tempNumArr.append(num2)
-//                            indexArr.append(i)
-//                        }
-//                    }
-//                }
-//            }else{
-//                for (i,num1) in nums1.enumerated(){
-//                    for num2 in nums2{
-//                        if num1 == num2 && !indexArr.contains(i){
-//                            tempNumArr.append(num1)
-//                            indexArr.append(i)
-//                        }
-//                    }
-//                }
-//            }
-//
-//        }else{
-//            for (i,num2) in nums2.enumerated(){
-//                for num1 in nums1{
-//                    if num2 == num1 && !indexArr.contains(i){
-//                        tempNumArr.append(num2)
-//                        indexArr.append(i)
-//                    }
-//                }
-//            }
-//        }
-        
-//        var tempArr:[Int] = []
-//
-//        var tempSureNum:Int?
-//        if nums1.count>nums2.count{
-//            tempNumArr = nums1
-//            tempArr = nums2
-//        }else{
-//
-//        }
-//        for i in 0..<nums1.count {
-//            for num2 in nums2{
-//                //
-//
-//            }
-//        }
-//
         return tempNumArr
     }
     
@@ -642,6 +587,43 @@ class HDLeetCodeViewController: UIViewController {
         
         return true
     }
+    
+    /*
+     买卖股票的最佳时机 II
+     给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+     
+     设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
+     
+     注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+     
+     示例 1:
+     
+     输入: [7,1,5,3,6,4]
+     输出: 7
+     解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。
+     示例 2:
+     
+     输入: [1,2,3,4,5]
+     输出: 4
+     解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
+     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+     示例 3:
+     
+     输入: [7,6,4,3,1]
+     输出: 0
+     解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+     */
+    func maxProfit(_ prices: [Int]) -> Int {
+        
+        var dateNum = 0
+        
+        
+        return dateNum
+        
+    }
+    
    // =======================================================================================================================
 
     func bubbleSort(nums:[Int]) -> [Int]{
