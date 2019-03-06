@@ -53,20 +53,24 @@ class HDLeetCodeViewController: UIViewController {
 //        //旋转
 //        var arr = [[1,2,3],[4,5,6],[7,8,9]]
 //        rotate(&arr)
-        //数独
-        let suduArr = [
-            ["5","3",".",".","7",".",".",".","."],
-            ["6",".",".","1","9","5",".",".","."],
-            [".","9","8",".",".",".",".","6","."],
-            ["8",".",".",".","6",".",".",".","3"],
-            ["4",".",".","8",".","3",".",".","1"],
-            ["7",".",".",".","2",".",".",".","6"],
-            [".","6",".",".",".",".","2","8","."],
-            [".",".",".","4","1","9",".",".","5"],
-            [".",".",".",".","8",".",".","7","9"]
-        ]
-        let suduResult = isValidSudoku(suduArr)
-        print("是否为有效的数独:\(suduResult)")
+//        数独
+//        let suduArr = [
+//            ["5","3",".",".","7",".",".",".","."],
+//            ["6",".",".","1","9","5",".",".","."],
+//            [".","9","8",".",".",".",".","6","."],
+//            ["8",".",".",".","6",".",".",".","3"],
+//            ["4",".",".","8",".","3",".",".","1"],
+//            ["7",".",".",".","2",".",".",".","6"],
+//            [".","6",".",".",".",".","2","8","."],
+//            [".",".",".","4","1","9",".",".","5"],
+//            [".",".",".",".","8",".",".","7","9"]
+//        ]
+//        let suduResult = isValidSudoku(suduArr)
+//        print("是否为有效的数独:\(suduResult)")
+        
+                //两个数组的交集
+                let jiaojiArr = intersect([3,1,2], [1,1])
+                print(jiaojiArr)
     }
     
     //点击屏幕打印数据
@@ -387,7 +391,84 @@ class HDLeetCodeViewController: UIViewController {
     func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         
         var tempNumArr = [Int]()
+        var indexArr = [Int]()
+        var indexArrTwo = [Int]()
         
+        var nums11 = nums1
+        var nums22 = nums2
+        
+        if nums1.count>nums2.count{
+            (nums11,nums22) = (nums22,nums11)
+        }
+        
+        for (i,num11) in nums11.enumerated(){
+            for (j,num22) in nums22.enumerated(){
+                if num11 == num22 && !indexArr.contains(i) && !indexArrTwo.contains(j){
+                    tempNumArr.append(num11)
+                    indexArr.append(i)
+                    indexArrTwo.append(j)
+                }
+            }
+        }
+        
+//        if nums1.count<nums2.count{
+//            for (i,num1) in nums1.enumerated(){
+//                for (j,num2) in nums2.enumerated(){
+//                    if num1 == num2 && !indexArr.contains(i) && !indexArrTwo.contains(j){
+//                        tempNumArr.append(num1)
+//                        indexArr.append(i)
+//                        indexArrTwo.append(j)
+//                    }
+//                }
+//            }
+//        }else{
+//            for (i,num2) in nums2.enumerated(){
+//                for (j,num1) in nums1.enumerated(){
+//                    if num2 == num1 && !indexArr.contains(i) && !indexArrTwo.contains(j){
+//                        tempNumArr.append(num2)
+//                        indexArr.append(i)
+//                        indexArrTwo.append(j)
+//                    }
+//                }
+//            }
+//        }
+        
+            
+//            if nums1.count==nums2.count{
+//
+//            let set1 = Set(nums1)
+//            let set2 = Set(nums2)
+//
+//            if set1.count<set2.count{
+//                for (i,num2) in nums2.enumerated(){
+//                    for num1 in nums1{
+//                        if num2 == num1 && !indexArr.contains(i){
+//                            tempNumArr.append(num2)
+//                            indexArr.append(i)
+//                        }
+//                    }
+//                }
+//            }else{
+//                for (i,num1) in nums1.enumerated(){
+//                    for num2 in nums2{
+//                        if num1 == num2 && !indexArr.contains(i){
+//                            tempNumArr.append(num1)
+//                            indexArr.append(i)
+//                        }
+//                    }
+//                }
+//            }
+//
+//        }else{
+//            for (i,num2) in nums2.enumerated(){
+//                for num1 in nums1{
+//                    if num2 == num1 && !indexArr.contains(i){
+//                        tempNumArr.append(num2)
+//                        indexArr.append(i)
+//                    }
+//                }
+//            }
+//        }
         
 //        var tempArr:[Int] = []
 //
