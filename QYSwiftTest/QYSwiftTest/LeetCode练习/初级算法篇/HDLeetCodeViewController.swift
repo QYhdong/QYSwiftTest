@@ -616,10 +616,15 @@ class HDLeetCodeViewController: UIViewController {
      解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
      */
     func maxProfit(_ prices: [Int]) -> Int {
-        
         var dateNum = 0
-        
-        
+        if prices.count>0{
+            for i in 0..<(prices.count-1){
+                let num = prices[i+1]-prices[i]
+                if num>0{
+                    dateNum = dateNum+num
+                }
+            }
+        }
         return dateNum
         
     }
