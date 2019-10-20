@@ -21,10 +21,4 @@ swift日常练习
         let resultTwo = testTwo(Nums: 2,3,5,6,8,7,10)
         print("打印求和数字:\(resultTwo)")
 
-swift进阶
 
-RXSwift学习 
-计算求和
-登录注册响应
-
-LeetCode部分算法(swift)
